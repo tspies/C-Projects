@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/27 09:59:07 by tspies            #+#    #+#             */
-/*   Updated: 2020/01/24 23:27:04 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/03/10 13:21:24 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list  *print_list(t_list *ls)
     tmp = ls;
     while (ls)
     {
-        ft_printf("%s\n", ls->file->name);
+        ft_printf("   %s\n", ls->file->name);
         ls = ls->next;
     }
     ls = tmp;

@@ -6,7 +6,7 @@
 #    By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/31 12:24:51 by tspies            #+#    #+#              #
-#    Updated: 2020/01/25 23:04:47 by tristyn          ###   ########.fr        #
+#    Updated: 2020/03/10 14:44:41 by tristyn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,16 +47,16 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@make -C $(LIB_PATH)
 	@echo "$(G)Libft Makefile Running..."
-	# @sleep 0.5
+	# sleep 0.5
 	@echo "$(G)Compliling All $(BB).c $(G)Files...$(SET)"
-	# @sleep 0.5
+	# sleep 0.5
 	@echo "$(G)Compliling All $(BB).o $(G)Files...$(SET)"
-	# @sleep 0.5
+	# sleep 0.5
 	@echo "$(G)Creating $(BR)Libft.a $(G)Library$(SET)"
-	# @sleep 0.5
+	# sleep 0.5
 	@echo "$(G)Binary $(BR)Libft.a $(G)Created!$(SET)"
 	@$(CC) $(FLAGS) $(OBJ) -L $(LIB_PATH) -lft -o $(NAME)
-	# @sleep 1
+	# sleep 1
 	@echo "\033[32mBinary \033[1;31m$(NAME)\033[0m\033[32m Fused With Libft.a\033[0m"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c

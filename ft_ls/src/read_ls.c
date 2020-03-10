@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 10:12:02 by tspies            #+#    #+#             */
-/*   Updated: 2020/01/28 09:39:00 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/03/10 14:46:44 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ static t_list       *get_stats(t_list *list)
             return (NULL);
         if ((lstat(list->file->path, list->file->st)) < 0)
         {
-            ft_printf("%s\n", list->file->path);
-            write(1, "BAD STAT\n", 9);
             return (NULL);
         }
         list = list->next;
@@ -74,13 +72,9 @@ void		ft_ls(char *dir_name, t_flag *flags/*, int i*/)
 		}
     }
     list = head;
-    // ft_printf("ENTER SORT\n");
-	//TO DO: Create a sort file which will hold all the sorting.
-	//TODO: Fix ascii sort first as it is 'ls' default. Sort comes before getstat/ getpath.
 	//TODO: Check the -t flag against no sorting flags - r comes after t.
 	//TODO: -l will be handled in the print output -a is already handled.
     sort_ascii(list, flags); 
-    // ft_printf("EXIT SORT\n");
     list = head;
     get_path(list, head, dir_name);
     get_stats(list);
@@ -88,9 +82,7 @@ void		ft_ls(char *dir_name, t_flag *flags/*, int i*/)
     print_list(list);
 	ft_printf("|----------<<<\n\n");
 	if (flags->flag_R == 1){
-		//i--;
-		recursion_start(dir_name, list, flags/*, i*/);
-		ft_printf("In Recusion\n");
+		recursion_start(dir_name, list, flags);
 	}
 }
 
@@ -99,7 +91,7 @@ void        read_dir_stream(char **arg_list, t_flag *flags)
 	int i = 0;
 	//int x = 10;
 	while (arg_list[i]){
-		ft_ls(arg_list[i], flags/*, x*/);
+		ft_ls(arg_list[i], flags);
 		i++;
 	}
     // if (ac == 1)

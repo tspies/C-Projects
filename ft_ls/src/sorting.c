@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 11:59:23 by tspies            #+#    #+#             */
-/*   Updated: 2020/01/28 10:20:46 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/03/10 13:28:08 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,45 +42,37 @@ t_list  *sort_ascii(t_list *list, t_flag *flag)
     tmp = NULL;
     if (list)
     {
-		ft_printf("---------->>>\n");
-        print_list(list);
-		ft_printf("----------<<<\n");
-        while (list)
+        while (list->next)
         {   
             // write(1, "IN WHILE\n", 9);
             // print_list(list);
             if ((ft_strcmp(list->file->name, list->next->file->name)) > 0)
             {
                 // print_list(ls);
-                ft_printf("-------------\n");
-				ft_printf("Swapping CURRENT: %s with NEXT: %s\n", list->file->name, list->next->file->name);
-                if (!(tmp = ft_strdup(list->file->name)))
+                // ft_printf("-------------\n");
+				// ft_printf("Swapping CURRENT: %s with NEXT: %s\n", list->file->name, list->next->file->name);
+                if (!(tmp = list->file->name))
                     ft_printf("TMP FAIL\n");
                 if (!(list->file->name))
                     ft_printf("FALSE NAME\n");
-                if (!(list->file->name = ft_strdup(list->next->file->name)))
+                if (!(list->file->name = list->next->file->name))
                     ft_printf("NAME FAIL\n");
-                if (!(list->next->file->name = ft_strdup(tmp)))
+                if (!(list->next->file->name = tmp))
                     ft_printf("NEXT FAIL\n");
-				ft_printf("CURRENT: %s, NEXT: %s\n", list->file->name, list->next->file->name);
-				ft_printf("---------->>>\n");
-        		print_list(list);
-				ft_printf("----------<<<\n");
+				// ft_printf("CURRENT: %s, NEXT: %s\n", list->file->name, list->next->file->name);
+				// ft_printf("---------->>>\n");
+        		// print_list(list);
+				// ft_printf("----------<<<\n");
                 list = list_head;
             }
             else{
-				ft_printf("File: %s NEXT: %s\n", list->file->name, list->next->file->name);
+				// ft_printf("File: %s NEXT: %s\n", list->file->name, list->next->file->name);
 				list = list->next;
 			}
         }
-		ft_printf("---------->>>\n");
-        print_list(list);
-		ft_printf("----------<<<\n");
-        // ft_printf("%s\n", list->file->name);
-        // if (!list)
-        //     ft_printf("NULL LIST\n");
-        // list = tmp_ls;
-        // print_list(ls);
+		// ft_printf("---------->>>\n");
+        // print_list(list);
+		// ft_printf("----------<<<\n");
     }
     list = list_head;
     return (list);
