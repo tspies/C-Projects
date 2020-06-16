@@ -3,38 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tspies <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 09:59:31 by tspies            #+#    #+#             */
-/*   Updated: 2018/06/06 15:15:20 by tspies           ###   ########.fr       */
+/*   Updated: 2020/06/14 23:42:03 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static	char	*ft_returnzero(int n)
 {
-	char	*str;
-	char	minint[12];
+	char	*p;
 
-	if (!(str = (char *)malloc(sizeof(char) * 2)))
-		return (NULL);
+	if (n == 0)
+	{
+		p = (char*)ft_memalloc(2);
+		if (!p)
+			return (NULL);
+		p[0] = '0';
+		p[1] = '\0';
+	}
+	if (n == (-2147483647 - 1))
+	{
+		p = ft_strnew(12);
+		if (!p)
+			return (NULL);
+		ft_strcpy(p, "-2147483648\0");
+	}
+	return (p);
+}
+
+char			*ft_itoa(int n)
+{
+	char	*ret;
+	int		len;
+	int		isneg;
+
+	if (n == 0 || n == (-2147483647 - 1))
+		return (ft_returnzero(n));
+	len = ft_intlen(n);
+	isneg = 0;
 	if (n < 0)
 	{
-		if (n == -2147483648)
-		{
-			return (ft_strdup(ft_strcpy(minint, "-2147483648")));
-		}
-		str[0] = '-';
-		str[1] = '\0';
-		str = ft_strjoin(str, ft_itoa(-n));
+		isneg = 1;
+		n = n * -1;
 	}
-	else if (n >= 10)
-		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else if (n < 10)
+	if (!(ret = (char*)ft_memalloc(len + 1)))
+		return (NULL);
+	ret[len + 1] = '\0';
+	while (n != 0)
 	{
-		str[0] = (char)n + '0';
-		str[1] = '\0';
+		ret[--len] = n % 10 + 48;
+		n = n / 10;
 	}
-	return (str);
+	if (isneg)
+		ret[0] = '-';
+	return (ret);
 }

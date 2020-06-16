@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 03:12:28 by tristyn           #+#    #+#             */
-/*   Updated: 2020/01/24 22:28:36 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 01:19:28 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,16 @@ t_flag		*flag_check(t_flag *flags, char **av)
 }
 
 
-static t_file 		*initialize_node(t_file *ls)
-{
-	ls = ((t_file *)malloc(sizeof(t_file) * 1));
-	if (!(ls))
-		return (NULL);
-	ls->name = NULL;
-	ls->path = NULL;
-	ls->st = NULL;
-	return (ls);
-}
+// static t_file 		*initialize_node(t_file *ls)
+// {
+// 	ls = ((t_file *)malloc(sizeof(t_file) * 1));
+// 	if (!(ls))
+// 		return (NULL);
+// 	ls->name = NULL;
+// 	ls->path = NULL;
+// 	ls->st = NULL;
+// 	return (ls);
+// }
 
 static t_flag *flag_start(t_flag *flag)
 {
@@ -83,21 +83,13 @@ static t_flag *flag_start(t_flag *flag)
 	flag->flag_r = 0;
 	flag->flag_R = 0;
 	flag->flag_err = 1;
+	flag->flag_multi = 0;
 	return (flag);
 }
 
-t_flag		*ft_initialize_ls(int ac, char **av)
-{
-	t_file	*ls_node;
-	t_flag	*flags;
+void		ft_initialize_ls(char **av, t_flag *flags){
 
-	flags = NULL;
-	ls_node = NULL;
-	if (!(flags = (t_flag *)malloc(sizeof(t_flag) * 1)))
-		broken();
-	flags = flag_check(flag_start(flags), av);
+	flag_start(flags);
+	flag_check(flags, av);
 	// ft_printf("FLAG LIST:\n a:  %u\n l:  %u\n t:  %u\n r:  %u\n R:  %u\n", flags->flag_a, flags->flag_l, flags->flag_t, flags->flag_r, flags->flag_R);
-	if (!(ls_node = initialize_node(ls_node)))
-		broken();
-	return (flags);
 }

@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 22:01:39 by tristyn           #+#    #+#             */
-/*   Updated: 2020/01/24 23:55:58 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 01:38:04 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,40 @@ int		arg_nbr_check(int ac, char **av){
 	return arg_nbr;
 }
 
-char	**parse_args(int nbr, t_flag *flags, char **av){
+void	parse_args(int nbr, t_flag *flags, char **av, char **arg_list){
+	
 	int 	i = 0;
-	char	**arg_list;
-	arg_list = (char **)malloc(sizeof(char) * 999999);
+
+	// ft_printf("FLAG Error = %d\n", flags->flag_err);
+	if ((flags->flag_err == 0 && nbr >= 3) || (flags->flag_err == 1 && nbr >= 2)){
+		flags->flag_multi = 1;
+		// ft_printf("\n\nFlag Multi ON == %d\n\n", flags->flag_multi);
+	}
 	if ((flags->flag_err == 1 && nbr == 0) || (flags->flag_err == 0 && nbr == 1)){
-		ft_printf("1st Case\n");
-		arg_list[i] = strdup(".");
+		// ft_printf("1st Case\n");
+		if (arg_list[i] != NULL)
+			free(arg_list[i]);
+		arg_list[i] = ft_strdup(".");
+		// ft_printf("ARGLIST: %s\n", arg_list[i]);
 	}
 	else if (flags->flag_err == 0 && nbr > 1){
-		ft_printf("2nd Case\n");
+		// ft_printf("2nd Case\n");
 		while(nbr > 1){
-			arg_list[i] = strdup(av[i + 2]);
+			if(arg_list[i] != NULL)
+				free(arg_list[i]);
+			arg_list[i] = ft_strdup(av[i + 2]);
 			i++;
 			nbr -= 1;
 		}
 	}
 	else if (flags->flag_err == 1 && nbr > 0){
-		ft_printf("3rd case\n");
+		// ft_printf("3rd case\n");
 		while (nbr > 0){
-			arg_list[i] = strdup(av[i + 1]);
+			if (arg_list[i] != NULL)
+				free(arg_list[i]);
+			arg_list[i] = ft_strdup(av[i + 1]);
 			i++;
 			nbr -= 1;
 		}
 	}
-	return arg_list;
 }

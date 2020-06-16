@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/31 12:59:21 by tspies            #+#    #+#             */
-/*   Updated: 2020/01/28 09:39:00 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 01:07:49 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct	s_flags
 	u_int	flag_r;
 	u_int	flag_R;
 	u_int	flag_err;
+	u_int	flag_multi;
 }				t_flag;
 
 typedef struct s_file 
@@ -51,6 +52,8 @@ typedef struct s_file
 typedef struct	s_list
 {
 	struct s_file	*file;
+	char			*name;
+	char			*path;
 	struct s_list	*next;
 }			t_list;
 
@@ -59,13 +62,10 @@ typedef struct	s_list
 **
 **		-->initialize<--
 */
-t_flag			*ft_initialize_ls(int ac, char **av);
-void        	read_dir_stream(char **arg_list, t_flag *flags);
-t_list  		*sort_ascii(t_list *list, t_flag *flag);
-t_list  		*print_list(t_list *ls);
-void			print_args(char **arg_list);
-void			ft_ls(char *dir_name, t_flag *flags/*, int i*/);
-void			recursion_start(char *dir_name, t_list *list, t_flag *flags/*, int i*/);
+void			ft_initialize_ls(char **av, t_flag *flags);
+void        	read_dir_stream(char *arg_list, t_flag *flags);
+void			ft_ls(t_list* list, char *dir_name, t_flag *flags/*, int i*/);
+void			recursion_start(char *arg_list, t_flag *flags);
 
 /*
 **		-->error output<--
@@ -73,11 +73,40 @@ void			recursion_start(char *dir_name, t_list *list, t_flag *flags/*, int i*/);
 void    		flag_err_msg(char c); 
 void			broken(void);
 void			straight_exit(void);
+void			no_dir_or_file_error(char *dir_or_file_name);
 
 // Arguments
 int				arg_nbr_check(int ac, char **av);
-char			**parse_args(int nbr, t_flag *flags, char **av);
+void			parse_args(int nbr, t_flag *flags, char **av, char **arg_list);
 
 // Recursion
-int		root_dir_path(char *name);
+int				root_dir_path(char *name);
+
+// Sorting
+void	  		sort_ascii(t_list *list);
+t_list			*sorting_switchboard(t_list *list, char *dir_name, t_flag *flag);
+t_list			*sort_rev(t_list *list);
+t_list			*sort_time(t_list *list, char* dir);
+t_list       	*get_path(t_list *list, char *dir);
+
+// Printing
+void 			print_handler(t_list *list, t_flag *flags, char * dir_name);
+void			print_args(char **arg_list);
+t_list  		*print_list(t_list *ls);
+
+// Print Long
+void			print_file_rights(struct stat file_stat);
+void			print_file_links(struct stat file_stat);
+void			print_file_type(struct stat file_stat);
+void			print_file_id(struct stat file_stat, int *block_width_array);
+void			print_long_format(char *file_path, char *file_name, int *block_width_array);
+void			print_file_minor(struct stat file_stat, int *block_width_array);
+void			print_file_major(struct stat file_stat, int *block_width_array);
+void			print_file_time(struct stat file_stat);
+int				build_block_width_array(t_list *list, struct stat file_stat, int *block_width_array, int block_init);
+
+//MISC
+void			set_all_to_null(char **arg_list);
+void			free_list_a(t_list *list, t_list *list_head);
+void			free_list(t_list *list, t_list *list_head);
 #endif

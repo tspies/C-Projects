@@ -6,7 +6,7 @@ L_PATH = libft
 
 CC =	gcc
 FLAGS +=	-Wall -Wextra -Werror
-FLAGS +=	-Iincludes
+FLAGS +=	-I includes
 
 LIB_SRC	=	ft_strlen.c \
 				ft_strchr.c \

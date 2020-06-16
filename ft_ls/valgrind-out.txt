@@ -1,0 +1,2055 @@
+==89914== Memcheck, a memory error detector
+==89914== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==89914== Using Valgrind-3.16.0.GIT-0b5ae2f717-20200422 and LibVEX; rerun with -h for copyright info
+==89914== Command: ./ft_ls
+==89914== Parent PID: 92759
+==89914== 
+--89914-- 
+--89914-- Valgrind options:
+--89914--    --tool=memcheck
+--89914--    --leak-check=full
+--89914--    --show-leak-kinds=all
+--89914--    --track-fds=yes
+--89914--    --track-origins=yes
+--89914--    --show-reachable=yes
+--89914--    --verbose
+--89914--    --gen-suppressions=all
+--89914--    --log-file=valgrind-out.txt
+--89914-- Output from sysctl({CTL_KERN,KERN_VERSION}):
+--89914--   Darwin Kernel Version 18.7.0: Mon Apr 27 20:09:39 PDT 2020; root:xnu-4903.278.35~1/RELEASE_X86_64
+--89914-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--89914-- Page sizes: currently 4096, max supported 4096
+--89914-- Valgrind library directory: /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind
+--89914-- ./ft_ls (rx at 0x100000000, rw at 0x100007000)
+--89914--    reading syms   from primary file (76 616)
+--89914--    dSYM= ./ft_ls.dSYM/Contents/Resources/DWARF/ft_ls
+--89914--    dSYM does not have correct UUID (out of date?)
+--89914-- run: /usr/bin/dsymutil "./ft_ls"
+--89914--    dsyms= ./ft_ls.dSYM/Contents/Resources/DWARF/ft_ls
+--89914--    reading dwarf3 from dsyms file
+--89914-- /usr/lib/dyld (rx at 0x10000d000, rw at 0x100078000)
+--89914--    reading syms   from primary file (5 2133)
+--89914-- Scheduler: using generic scheduler lock implementation.
+--89914-- Reading suppressions file: /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/default.supp
+==89914== embedded gdbserver: reading from /var/folders/gm/mm63pn0n0kdf_sgzmhbcfm6w0000gn/T//vgdb-pipe-from-vgdb-to-89914-by-tristyn-on-???
+==89914== embedded gdbserver: writing to   /var/folders/gm/mm63pn0n0kdf_sgzmhbcfm6w0000gn/T//vgdb-pipe-to-vgdb-from-89914-by-tristyn-on-???
+==89914== embedded gdbserver: shared mem   /var/folders/gm/mm63pn0n0kdf_sgzmhbcfm6w0000gn/T//vgdb-pipe-shared-mem-vgdb-89914-by-tristyn-on-???
+==89914== 
+==89914== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==89914== don't want to do, unless you know exactly what you're doing,
+==89914== or are doing some strange experiment):
+==89914==   /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/../../bin/vgdb --pid=89914 ...command...
+==89914== 
+==89914== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==89914==   /path/to/gdb ./ft_ls
+==89914== and then give GDB the following command
+==89914==   target remote | /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/../../bin/vgdb --pid=89914
+==89914== --pid is optional if only one valgrind process is running
+==89914== 
+--89914-- REDIR: 0x10004e120 (dyld:strcmp) redirected to 0x258057bb2 (???)
+--89914-- REDIR: 0x1000485f6 (dyld:arc4random) redirected to 0x258057c50 (???)
+--89914-- REDIR: 0x10004d500 (dyld:strlen) redirected to 0x258057b81 (???)
+--89914-- REDIR: 0x10004e420 (dyld:strcpy) redirected to 0x258057bce (???)
+--89914-- REDIR: 0x10004b6f0 (dyld:strcat) redirected to 0x258057b92 (???)
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100013330: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E035: _dyld_start (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100046A64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100015456: dyld::checkEnvironmentVariables(char const**) (in /usr/lib/dyld)
+==89914==    by 0x100013339: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E035: _dyld_start (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100046A64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyldL25checkEnvironmentVariablesEPPKc
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+--89914-- REDIR: 0x10004d2f0 (dyld:strlcat) redirected to 0x258057beb (???)
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x10000FBBC: dyld::processDyldEnvironmentVariable(char const*, char const*, char const*) (in /usr/lib/dyld)
+==89914==    by 0x100015566: dyld::checkEnvironmentVariables(char const**) (in /usr/lib/dyld)
+==89914==    by 0x100013339: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E035: _dyld_start (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100046A64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyld30processDyldEnvironmentVariableEPKcS1_S1_
+   fun:_ZN4dyldL25checkEnvironmentVariablesEPPKc
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100013341: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E035: _dyld_start (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100046A64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x10001739D: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==89914==    by 0x100016D17: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==89914==    by 0x100010AC9: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==89914==    by 0x10001061D: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==89914==    by 0x1000143A0: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E035: _dyld_start (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100046A64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x10001739D: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==89914==    by 0x100016D17: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==89914==    by 0x100010AC9: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==89914==    by 0x100010658: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==89914==    by 0x1000143A0: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E035: _dyld_start (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100046A64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+--89914-- /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_core-amd64-darwin.so (rx at 0x1000d8000, rw at 0x1000dc000)
+--89914--    reading syms   from primary file (3 46)
+--89914--    dSYM= /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_core-amd64-darwin.so.dSYM/Contents/Resources/DWARF/vgpreload_core-amd64-darwin.so
+--89914-- /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so (rx at 0x1000de000, rw at 0x1000e5000)
+--89914--    reading syms   from primary file (72 55)
+--89914--    dSYM= /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so.dSYM/Contents/Resources/DWARF/vgpreload_memcheck-amd64-darwin.so
+--89914-- /usr/lib/libSystem.B.dylib (rx at 0x1000e9000, rw at 0x1000eb000)
+--89914--    reading syms   from primary file (29 7)
+--89914-- /usr/lib/system/libcache.dylib (rx at 0x1000f0000, rw at 0x1000f5000)
+--89914--    reading syms   from primary file (32 28)
+--89914-- /usr/lib/system/libcommonCrypto.dylib (rx at 0x1000fa000, rw at 0x100105000)
+--89914--    reading syms   from primary file (222 164)
+--89914-- /usr/lib/system/libcompiler_rt.dylib (rx at 0x100112000, rw at 0x10011a000)
+--89914--    reading syms   from primary file (510 8)
+--89914-- /usr/lib/system/libcopyfile.dylib (rx at 0x100127000, rw at 0x100131000)
+--89914--    reading syms   from primary file (11 37)
+--89914-- /usr/lib/system/libcorecrypto.dylib (rx at 0x100137000, rw at 0x1001bc000)
+--89914--    reading syms   from primary file (525 697)
+--89914-- /usr/lib/system/libdispatch.dylib (rx at 0x1001d8000, rw at 0x100212000)
+--89914--    reading syms   from primary file (300 878)
+--89914-- /usr/lib/system/libdyld.dylib (rx at 0x100242000, rw at 0x10026f000)
+--89914--    reading syms   from primary file (107 1127)
+--89914-- /usr/lib/system/libkeymgr.dylib (rx at 0x10028d000, rw at 0x10028e000)
+--89914--    reading syms   from primary file (11 2)
+--89914-- /usr/lib/system/libmacho.dylib (rx at 0x100299000, rw at 0x10029f000)
+--89914--    reading syms   from primary file (105 2)
+--89914-- /usr/lib/system/libquarantine.dylib (rx at 0x1002a5000, rw at 0x1002a8000)
+--89914--    reading syms   from primary file (71 12)
+--89914-- /usr/lib/system/libremovefile.dylib (rx at 0x1002ae000, rw at 0x1002b0000)
+--89914--    reading syms   from primary file (12 6)
+--89914-- /usr/lib/system/libsystem_asl.dylib (rx at 0x1002b5000, rw at 0x1002cd000)
+--89914--    reading syms   from primary file (220 227)
+--89914-- /usr/lib/system/libsystem_blocks.dylib (rx at 0x1002da000, rw at 0x1002db000)
+--89914--    reading syms   from primary file (21 7)
+--89914-- /usr/lib/system/libsystem_c.dylib (rx at 0x1002df000, rw at 0x100367000)
+--89914--    reading syms   from primary file (1342 803)
+--89914-- /usr/lib/system/libsystem_configuration.dylib (rx at 0x10038f000, rw at 0x100393000)
+--89914--    reading syms   from primary file (38 64)
+--89914-- /usr/lib/system/libsystem_coreservices.dylib (rx at 0x100399000, rw at 0x10039d000)
+--89914--    reading syms   from primary file (14 43)
+--89914-- /usr/lib/system/libsystem_darwin.dylib (rx at 0x1003a2000, rw at 0x1003a9000)
+--89914--    reading syms   from primary file (40 331)
+--89914-- /usr/lib/system/libsystem_dnssd.dylib (rx at 0x1003b3000, rw at 0x1003ba000)
+--89914--    reading syms   from primary file (39 34)
+--89914-- /usr/lib/system/libsystem_info.dylib (rx at 0x1003bf000, rw at 0x10040b000)
+--89914--    reading syms   from primary file (426 719)
+--89914-- /usr/lib/system/libsystem_m.dylib (rx at 0x100421000, rw at 0x10046d000)
+--89914--    reading syms   from primary file (811 1)
+--89914-- /usr/lib/system/libsystem_malloc.dylib (rx at 0x10047b000, rw at 0x1004a6000)
+--89914--    reading syms   from primary file (156 420)
+--89914-- /usr/lib/system/libsystem_networkextension.dylib (rx at 0x1004b5000, rw at 0x1004c0000)
+--89914--    reading syms   from primary file (99 180)
+--89914-- /usr/lib/system/libsystem_notify.dylib (rx at 0x1004cb000, rw at 0x1004d3000)
+--89914--    reading syms   from primary file (23 1)
+--89914-- /usr/lib/system/libsystem_sandbox.dylib (rx at 0x1004d9000, rw at 0x1004dd000)
+--89914--    reading syms   from primary file (100 13)
+--89914-- /usr/lib/system/libsystem_secinit.dylib (rx at 0x1004e3000, rw at 0x1004e6000)
+--89914--    reading syms   from primary file (4 7)
+--89914-- /usr/lib/system/libsystem_kernel.dylib (rx at 0x1004eb000, rw at 0x100514000)
+--89914--    reading syms   from primary file (1307 120)
+--89914-- /usr/lib/system/libsystem_platform.dylib (rx at 0x10052e000, rw at 0x100538000)
+--89914--    reading syms   from primary file (166 105)
+--89914-- /usr/lib/system/libsystem_pthread.dylib (rx at 0x100540000, rw at 0x10054b000)
+--89914--    reading syms   from primary file (186 99)
+--89914-- /usr/lib/system/libsystem_symptoms.dylib (rx at 0x100555000, rw at 0x10055d000)
+--89914--    reading syms   from primary file (10 89)
+--89914-- /usr/lib/system/libsystem_trace.dylib (rx at 0x100563000, rw at 0x100579000)
+--89914--    reading syms   from primary file (128 237)
+--89914-- /usr/lib/system/libunwind.dylib (rx at 0x100588000, rw at 0x10058e000)
+--89914--    reading syms   from primary file (102 52)
+--89914-- /usr/lib/system/libxpc.dylib (rx at 0x100595000, rw at 0x1005c5000)
+--89914--    reading syms   from primary file (590 928)
+--89914-- /usr/lib/libobjc.A.dylib (rx at 0x1005e8000, rw at 0x100d6e000)
+--89914--    reading syms   from primary file (360 900)
+--89914-- /usr/lib/libc++abi.dylib (rx at 0x100f25000, rw at 0x100f3b000)
+--89914--    reading syms   from primary file (375 604)
+--89914-- /usr/lib/libc++.1.dylib (rx at 0x100f51000, rw at 0x100fa5000)
+--89914--    reading syms   from primary file (2023 1671)
+--89914-- REDIR: 0x10052f740 (libsystem_platform.dylib:_platform_memcmp) redirected to 0x1000e1f1c (_platform_memcmp)
+--89914-- REDIR: 0x10052ffc0 (libsystem_platform.dylib:_platform_strncmp) redirected to 0x1000e1726 (_platform_strncmp)
+--89914-- REDIR: 0x100530360 (libsystem_platform.dylib:_platform_strcmp) redirected to 0x1000e17a0 (_platform_strcmp)
+--89914-- REDIR: 0x10047f3a6 (libsystem_malloc.dylib:calloc) redirected to 0x1000e0296 (calloc)
+--89914-- REDIR: 0x10047f52c (libsystem_malloc.dylib:malloc_default_zone) redirected to 0x1000e0fc1 (malloc_default_zone)
+--89914-- REDIR: 0x10047cc32 (libsystem_malloc.dylib:malloc_zone_malloc) redirected to 0x1000dfee8 (malloc_zone_malloc)
+--89914-- REDIR: 0x10047f3e1 (libsystem_malloc.dylib:malloc_zone_calloc) redirected to 0x1000e0482 (malloc_zone_calloc)
+--89914-- REDIR: 0x10047cbfd (libsystem_malloc.dylib:malloc) redirected to 0x1000dfc80 (malloc)
+--89914-- REDIR: 0x10047f536 (libsystem_malloc.dylib:malloc_zone_from_ptr) redirected to 0x1000e1002 (malloc_zone_from_ptr)
+--89914-- REDIR: 0x10047f839 (libsystem_malloc.dylib:free) redirected to 0x1000e005c (free)
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100138726: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013863B: bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013987C: df_bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100139654: df (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137FD4: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137E2B: init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x100302E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:bcc_update
+   fun:df_bcc_update
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100138726: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013863B: bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013990C: df_bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100139654: df (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137FD4: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137E2B: init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x100302E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:bcc_update
+   fun:df_bcc_update
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100138726: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013863B: bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x1001396B6: df (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137FD4: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137E2B: init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x100302E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:bcc_update
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100138726: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013976B: df (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137FD4: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137E2B: init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x100302E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100139A4E: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013804C: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137E2B: init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x100302E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:drbg_update
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100138726: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100139C6E: generate (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302E87: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1001DAE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==89914==    by 0x1001E6AD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100138726: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x1001399D1: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100139CB9: generate (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302E87: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1001DAE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:drbg_update
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x1001399EE: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100139CB9: generate (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302E87: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1001DAE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==89914==    by 0x1001E6AD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:drbg_update
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100139A4E: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100139CB9: generate (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302E87: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1001DAE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==89914==    by 0x1001E6AD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:drbg_update
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+--89914-- REDIR: 0x10048287d (libsystem_malloc.dylib:realloc) redirected to 0x1000e0614 (realloc)
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x1005F1A27: _objc_rootAlloc (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596C88: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_objc_rootAlloc
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A29: _objc_rootAlloc (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596C88: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_objc_rootAlloc
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A3B: objc_memmove_collectable (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596C88: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_memmove_collectable
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A59: objc_initializeClassPair (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596C88: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_initializeClassPair
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A67: objc_initializeClassPair (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596C88: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_initializeClassPair
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x1005F1A27: _objc_rootAlloc (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596CA1: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_objc_rootAlloc
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A29: _objc_rootAlloc (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596CA1: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_objc_rootAlloc
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A3B: objc_memmove_collectable (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596CA1: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_memmove_collectable
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A59: objc_initializeClassPair (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596CA1: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_initializeClassPair
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100597C03: xpc_uint64_create (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100597B91: _xpc_collect_images (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100597002: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:xpc_uint64_create
+   fun:_xpc_collect_images
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x10059795E: _xpc_dictionary_insert (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100597CE9: _xpc_dyld_image_callback (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100011873: dyld::registerLoadCallback(void (*)(mach_header const*, char const*, bool)) (in /usr/lib/dyld)
+==89914==    by 0x100597BA1: _xpc_collect_images (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100597002: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_xpc_dictionary_insert
+   fun:_xpc_dyld_image_callback
+   fun:_ZN4dyld20registerLoadCallbackEPFvPK11mach_headerPKcbE
+   fun:_xpc_collect_images
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x1005979C8: _xpc_dictionary_insert (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100597CE9: _xpc_dyld_image_callback (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100011873: dyld::registerLoadCallback(void (*)(mach_header const*, char const*, bool)) (in /usr/lib/dyld)
+==89914==    by 0x100597BA1: _xpc_collect_images (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100597002: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_xpc_dictionary_insert
+   fun:_xpc_dyld_image_callback
+   fun:_ZN4dyld20registerLoadCallbackEPFvPK11mach_headerPKcbE
+   fun:_xpc_collect_images
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+}
+--89914-- REDIR: 0x1005301a0 (libsystem_platform.dylib:_platform_strchr$VARIANT$Haswell) redirected to 0x1000e1273 (_platform_strchr$VARIANT$Haswell)
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x10000280B: parse_args (args.c:40)
+==89914==    by 0x100002587: main (main.c:27)
+==89914==  Uninitialised value was created by a heap allocation
+==89914==    at 0x1000DFCF5: malloc (in /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==89914==    by 0x100002543: main (main.c:19)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:parse_args
+   fun:main
+}
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100000B2C: read_dir_stream (read_ls.c:76)
+==89914==    by 0x100002594: main (main.c:30)
+==89914==  Uninitialised value was created by a heap allocation
+==89914==    at 0x1000DFCF5: malloc (in /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==89914==    by 0x100002543: main (main.c:19)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:read_dir_stream
+   fun:main
+}
+==89914== 
+==89914== FILE DESCRIPTORS: 4 open at exit.
+==89914== Open file descriptor 3: /Users/tristyn/Desktop/C-Projects/ft_ls/valgrind-out.txt
+==89914==    <inherited from parent>
+==89914== 
+==89914== Open file descriptor 2: /dev/ttys001
+==89914==    <inherited from parent>
+==89914== 
+==89914== Open file descriptor 1: /dev/ttys001
+==89914==    <inherited from parent>
+==89914== 
+==89914== Open file descriptor 0: /dev/ttys001
+==89914==    <inherited from parent>
+==89914== 
+==89914== 
+==89914== HEAP SUMMARY:
+==89914==     in use at exit: 19,278 bytes in 165 blocks
+==89914==   total heap usage: 276 allocs, 111 frees, 34,052 bytes allocated
+==89914== 
+==89914== Searching for pointers to 165 not-freed blocks
+==89914== Checked 10,731,384 bytes
+==89914== 
+==89914== 24 bytes in 1 blocks are still reachable in loss record 4 of 43
+==89914==    at 0x1000DFF6A: malloc_zone_malloc (in /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==89914==    by 0x1005EB874: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100607646: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EA0F8: objc_opt::objc_stringhash_t::getIndex(char const*) const (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E993B: objc_image_info* getDataSection<objc_image_info>(mach_header_64 const*, char const*, unsigned long*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1001DAE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZNK8objc_opt17objc_stringhash_t8getIndexEPKc
+   fun:_Z14getDataSectionI15objc_image_infoEPT_PK14mach_header_64PKcPmS8_
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+}
+==89914== 32 bytes in 1 blocks are still reachable in loss record 9 of 43
+==89914==    at 0x1000DFF6A: malloc_zone_malloc (in /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==89914==    by 0x1005EB9EF: isEqualPrototype(void const*, void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB9BF: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB89C: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100607646: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EA0F8: objc_opt::objc_stringhash_t::getIndex(char const*) const (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E993B: objc_image_info* getDataSection<objc_image_info>(mach_header_64 const*, char const*, unsigned long*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:_ZL16isEqualPrototypePKvS0_S0_
+   fun:_ZL13hashPrototypePKvS0_
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZNK8objc_opt17objc_stringhash_t8getIndexEPKc
+   fun:_Z14getDataSectionI15objc_image_infoEPT_PK14mach_header_64PKcPmS8_
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==89914== 32 bytes in 1 blocks are still reachable in loss record 10 of 43
+==89914==    at 0x1000DFF6A: malloc_zone_malloc (in /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==89914==    by 0x1005EBA10: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB9BF: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB89C: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100607646: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EA0F8: objc_opt::objc_stringhash_t::getIndex(char const*) const (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E993B: objc_image_info* getDataSection<objc_image_info>(mach_header_64 const*, char const*, unsigned long*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:NXHashInsert
+   fun:_ZL13hashPrototypePKvS0_
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZNK8objc_opt17objc_stringhash_t8getIndexEPKc
+   fun:_Z14getDataSectionI15objc_image_infoEPT_PK14mach_header_64PKcPmS8_
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==89914== 32 bytes in 1 blocks are still reachable in loss record 11 of 43
+==89914==    at 0x1000DFCF5: malloc (in /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==89914==    by 0x1005EBAD4: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB9BF: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB89C: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100607646: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EA0F8: objc_opt::objc_stringhash_t::getIndex(char const*) const (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E993B: objc_image_info* getDataSection<objc_image_info>(mach_header_64 const*, char const*, unsigned long*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:NXHashInsert
+   fun:_ZL13hashPrototypePKvS0_
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZNK8objc_opt17objc_stringhash_t8getIndexEPKc
+   fun:_Z14getDataSectionI15objc_image_infoEPT_PK14mach_header_64PKcPmS8_
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==89914== 32 bytes in 1 blocks are still reachable in loss record 12 of 43
+==89914==    at 0x1000DFCF5: malloc (in /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==89914==    by 0x1005EB902: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100607646: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EA0F8: objc_opt::objc_stringhash_t::getIndex(char const*) const (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E993B: objc_image_info* getDataSection<objc_image_info>(mach_header_64 const*, char const*, unsigned long*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1001DAE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:NXHashGet
+   fun:NXCreateHashTableFromZone
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZNK8objc_opt17objc_stringhash_t8getIndexEPKc
+   fun:_Z14getDataSectionI15objc_image_infoEPT_PK14mach_header_64PKcPmS8_
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+}
+==89914== 48 bytes in 1 blocks are still reachable in loss record 17 of 43
+==89914==    at 0x1000E0511: malloc_zone_calloc (in /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==89914==    by 0x1005EBE94: remapClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EBE1E: TimeLogger::log(char const*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EBAFE: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB9BF: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB89C: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EB846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100607646: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005EA0F8: objc_opt::objc_stringhash_t::getIndex(char const*) const (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E993B: objc_image_info* getDataSection<objc_image_info>(mach_header_64 const*, char const*, unsigned long*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_calloc
+   fun:_ZL10remapClassP10objc_class
+   fun:_ZN10TimeLogger3logEPKc
+   fun:NXHashInsert
+   fun:_ZL13hashPrototypePKvS0_
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZNK8objc_opt17objc_stringhash_t8getIndexEPKc
+   fun:_Z14getDataSectionI15objc_image_infoEPT_PK14mach_header_64PKcPmS8_
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+}
+==89914== 48 bytes in 2 blocks are possibly lost in loss record 20 of 43
+==89914==    at 0x1000E0350: calloc (in /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==89914==    by 0x1005E9742: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1001DAE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==89914==    by 0x1001E6AD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==89914==    by 0x1000EA9C4: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:map_images_nolock
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+}
+==89914== LEAK SUMMARY:
+==89914==    definitely lost: 0 bytes in 0 blocks
+==89914==    indirectly lost: 0 bytes in 0 blocks
+==89914==      possibly lost: 48 bytes in 2 blocks
+==89914==    still reachable: 200 bytes in 6 blocks
+==89914==         suppressed: 19,030 bytes in 157 blocks
+==89914== 
+==89914== ERROR SUMMARY: 427 errors from 30 contexts (suppressed: 9 from 9)
+==89914== 
+==89914== 1 errors in context 1 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100000B2C: read_dir_stream (read_ls.c:76)
+==89914==    by 0x100002594: main (main.c:30)
+==89914==  Uninitialised value was created by a heap allocation
+==89914==    at 0x1000DFCF5: malloc (in /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==89914==    by 0x100002543: main (main.c:19)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:read_dir_stream
+   fun:main
+}
+==89914== 
+==89914== 1 errors in context 2 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x10000280B: parse_args (args.c:40)
+==89914==    by 0x100002587: main (main.c:27)
+==89914==  Uninitialised value was created by a heap allocation
+==89914==    at 0x1000DFCF5: malloc (in /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==89914==    by 0x100002543: main (main.c:19)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:parse_args
+   fun:main
+}
+==89914== 
+==89914== 1 errors in context 3 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100597C03: xpc_uint64_create (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100597B91: _xpc_collect_images (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100597002: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:xpc_uint64_create
+   fun:_xpc_collect_images
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+}
+==89914== 
+==89914== 1 errors in context 4 of 30:
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A59: objc_initializeClassPair (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596CA1: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_initializeClassPair
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== 
+==89914== 1 errors in context 5 of 30:
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A3B: objc_memmove_collectable (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596CA1: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_memmove_collectable
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== 
+==89914== 1 errors in context 6 of 30:
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A29: _objc_rootAlloc (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596CA1: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_objc_rootAlloc
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== 
+==89914== 1 errors in context 7 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x1005F1A27: _objc_rootAlloc (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596CA1: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_objc_rootAlloc
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== 
+==89914== 1 errors in context 8 of 30:
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A67: objc_initializeClassPair (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596C88: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_initializeClassPair
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== 
+==89914== 1 errors in context 9 of 30:
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A59: objc_initializeClassPair (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596C88: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_initializeClassPair
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== 
+==89914== 1 errors in context 10 of 30:
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A3B: objc_memmove_collectable (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596C88: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_memmove_collectable
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== 
+==89914== 1 errors in context 11 of 30:
+==89914== Use of uninitialised value of size 8
+==89914==    at 0x1005F1A29: _objc_rootAlloc (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596C88: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_objc_rootAlloc
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== 
+==89914== 1 errors in context 12 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x1005F1A27: _objc_rootAlloc (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x100596C88: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==    by 0x10000F71E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==89914==    by 0x100014708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_objc_rootAlloc
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==89914== 
+==89914== 1 errors in context 13 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100139A4E: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100139CB9: generate (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302E87: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1001DAE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==89914==    by 0x1001E6AD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:drbg_update
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==89914== 
+==89914== 1 errors in context 14 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x1001399EE: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100139CB9: generate (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302E87: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1001DAE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==89914==    by 0x1001E6AD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:drbg_update
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==89914== 
+==89914== 1 errors in context 15 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100138726: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x1001399D1: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100139CB9: generate (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302E87: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1001DAE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:drbg_update
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+}
+==89914== 
+==89914== 1 errors in context 16 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100138726: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100139C6E: generate (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302E87: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1001DAE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==89914==    by 0x1001E6AD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==89914== 
+==89914== 1 errors in context 17 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100139A4E: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013804C: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137E2B: init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x100302E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==    by 0x1005E9233: environ_init (in /usr/lib/libobjc.A.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:drbg_update
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+}
+==89914== 
+==89914== 1 errors in context 18 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100013341: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E035: _dyld_start (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100046A64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==89914== 
+==89914== 1 errors in context 19 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x10000FBBC: dyld::processDyldEnvironmentVariable(char const*, char const*, char const*) (in /usr/lib/dyld)
+==89914==    by 0x100015566: dyld::checkEnvironmentVariables(char const**) (in /usr/lib/dyld)
+==89914==    by 0x100013339: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E035: _dyld_start (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100046A64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyld30processDyldEnvironmentVariableEPKcS1_S1_
+   fun:_ZN4dyldL25checkEnvironmentVariablesEPPKc
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==89914== 
+==89914== 1 errors in context 20 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100015456: dyld::checkEnvironmentVariables(char const**) (in /usr/lib/dyld)
+==89914==    by 0x100013339: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E035: _dyld_start (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100046A64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyldL25checkEnvironmentVariablesEPPKc
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==89914== 
+==89914== 1 errors in context 21 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100013330: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E035: _dyld_start (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100046A64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==89914== 
+==89914== 2 errors in context 22 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x1005979C8: _xpc_dictionary_insert (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100597CE9: _xpc_dyld_image_callback (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100011873: dyld::registerLoadCallback(void (*)(mach_header const*, char const*, bool)) (in /usr/lib/dyld)
+==89914==    by 0x100597BA1: _xpc_collect_images (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100597002: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_xpc_dictionary_insert
+   fun:_xpc_dyld_image_callback
+   fun:_ZN4dyld20registerLoadCallbackEPFvPK11mach_headerPKcbE
+   fun:_xpc_collect_images
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+}
+==89914== 
+==89914== 2 errors in context 23 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x10059795E: _xpc_dictionary_insert (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100597CE9: _xpc_dyld_image_callback (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100011873: dyld::registerLoadCallback(void (*)(mach_header const*, char const*, bool)) (in /usr/lib/dyld)
+==89914==    by 0x100597BA1: _xpc_collect_images (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x100597002: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==89914==    by 0x1000EA9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==89914==    by 0x100025591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100025797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==89914==    by 0x100020BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x100020B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FD72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==89914==    by 0x10001FE04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_xpc_dictionary_insert
+   fun:_xpc_dyld_image_callback
+   fun:_ZN4dyld20registerLoadCallbackEPFvPK11mach_headerPKcbE
+   fun:_xpc_collect_images
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+}
+==89914== 
+==89914== 2 errors in context 24 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100138726: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013976B: df (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137FD4: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137E2B: init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x100302E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==    by 0x100243A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==89914== 
+==89914== 3 errors in context 25 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100138726: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013863B: bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x1001396B6: df (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137FD4: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137E2B: init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x100302E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==    by 0x10001262D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:bcc_update
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+}
+==89914== 
+==89914== 3 errors in context 26 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100138726: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013863B: bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013990C: df_bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100139654: df (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137FD4: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137E2B: init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x100302E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:bcc_update
+   fun:df_bcc_update
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+}
+==89914== 
+==89914== 3 errors in context 27 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x100138726: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013863B: bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x10013987C: df_bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100139654: df (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137FD4: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100137E2B: init (in /usr/lib/system/libcorecrypto.dylib)
+==89914==    by 0x100302CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x100302E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==89914==    by 0x1005EAA24: _read_images (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005E9A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x1005FC55F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==89914==    by 0x10001247A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100302C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:bcc_update
+   fun:df_bcc_update
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+}
+==89914== 
+==89914== 39 errors in context 28 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x10001739D: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==89914==    by 0x100016D17: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==89914==    by 0x100010AC9: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==89914==    by 0x100010658: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==89914==    by 0x1000143A0: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E035: _dyld_start (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100046A64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==89914== 
+==89914== 351 errors in context 29 of 30:
+==89914== Conditional jump or move depends on uninitialised value(s)
+==89914==    at 0x10001739D: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==89914==    by 0x100016D17: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==89914==    by 0x100010AC9: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==89914==    by 0x10001061D: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==89914==    by 0x1000143A0: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==89914==    by 0x10000E035: _dyld_start (in /usr/lib/dyld)
+==89914==  Uninitialised value was created by a stack allocation
+==89914==    at 0x100046A64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==89914== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+--89914-- 
+--89914-- used_suppression:      5 OSX1014:1-Leak /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/default.supp:747 suppressed: 8,792 bytes in 5 blocks
+--89914-- used_suppression:     11 OSX1014:17-Leak /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/default.supp:906 suppressed: 7,968 bytes in 115 blocks
+--89914-- used_suppression:     14 OSX1014:10-Leak /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/default.supp:839 suppressed: 2,102 bytes in 31 blocks
+--89914-- used_suppression:      6 OSX1014:18-Leak /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/default.supp:915 suppressed: 168 bytes in 6 blocks
+--89914-- used_suppression:      1 OSX1014:dyld-5 /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/default.supp:1283
+--89914-- used_suppression:      2 OSX1014:dyld-4 /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/default.supp:1275
+--89914-- used_suppression:      1 OSX1014:dyld-3 /usr/local/Cellar/valgrind/HEAD-0b5ae2f/lib/valgrind/default.supp:1267
+==89914== 
+==89914== ERROR SUMMARY: 427 errors from 30 contexts (suppressed: 9 from 9)
