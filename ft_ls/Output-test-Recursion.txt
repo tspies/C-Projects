@@ -508,7 +508,7 @@ total 0
 drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 layer1A
 drwxr-xr-x   5 tristyn  staff  160 Jan 24 21:35 .
 drwxr-xr-x   3 tristyn  staff   96 Jan 24 21:35 layer1B
-drwxr-xr-x  18 tristyn  staff  576 Jun 16 22:01 ..
+drwxr-xr-x  18 tristyn  staff  576 Jun 16 22:36 ..
 
 test/layer1A:
 total 0
@@ -547,8 +547,8 @@ drwxr-xr-x  11 tristyn  staff   352 Jun 11 22:15 .
 -rw-r--r--   1 tristyn  staff  4276 Jun 16 20:26 print_long.c
 -rw-r--r--   1 tristyn  staff  2443 Jun 16 21:32 args.c
 -rw-r--r--   1 tristyn  staff  7383 Jun 16 21:44 print.c
--rw-r--r--   1 tristyn  staff  2793 Jun 16 22:01 main.c
-drwxr-xr-x  18 tristyn  staff   576 Jun 16 22:01 ..
+-rw-r--r--   1 tristyn  staff  2793 Jun 16 22:35 main.c
+drwxr-xr-x  18 tristyn  staff   576 Jun 16 22:36 ..
 
 [================================]
 
@@ -562,7 +562,7 @@ total 0
 drwxr-xr-x   4 tristyn  staff  128 24 Jan 21:35 layer1A
 drwxr-xr-x   5 tristyn  staff  160 24 Jan 21:35 .
 drwxr-xr-x   3 tristyn  staff   96 24 Jan 21:35 layer1B
-drwxr-xr-x  18 tristyn  staff  576 16 Jun 22:01 ..
+drwxr-xr-x  18 tristyn  staff  576 16 Jun 22:36 ..
 
 test/layer1A:
 total 0
@@ -601,8 +601,8 @@ drwxr-xr-x  11 tristyn  staff   352 11 Jun 22:15 .
 -rw-r--r--   1 tristyn  staff  4276 16 Jun 20:26 print_long.c
 -rw-r--r--   1 tristyn  staff  2443 16 Jun 21:32 args.c
 -rw-r--r--   1 tristyn  staff  7383 16 Jun 21:44 print.c
--rw-r--r--   1 tristyn  staff  2793 16 Jun 22:01 main.c
-drwxr-xr-x  18 tristyn  staff   576 16 Jun 22:01 ..
+-rw-r--r--   1 tristyn  staff  2793 16 Jun 22:35 main.c
+drwxr-xr-x  18 tristyn  staff   576 16 Jun 22:36 ..
 
 
 [================================]
