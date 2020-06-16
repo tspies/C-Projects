@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/27 09:59:07 by tspies            #+#    #+#             */
-/*   Updated: 2020/06/16 19:24:19 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 21:44:26 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ void		print_handler(t_list *list, t_flag *flags, char *dir_name){
 			print_long_format(list->path, list->name, block_width_array);
 			list = list->next;	
 		}
+		ft_putchar('\n');
 		list = head;
 	}
 	else if (flags->flag_R == 1 && flags->flag_l == 0){

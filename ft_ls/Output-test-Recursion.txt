@@ -1,0 +1,610 @@
+   {FT_LS} -R
+
+[================================]
+Makefile
+Output-test-Recursion.txt
+Output-test.txt
+README.md
+author
+ft_ls
+ft_ls.dSYM
+ft_ls.en.pdf
+includes
+libft
+obj
+run-tests.sh
+src
+test
+valgrind-test.sh
+
+./ft_ls.dSYM:
+Contents
+
+./ft_ls.dSYM/Contents:
+Info.plist
+Resources
+
+./ft_ls.dSYM/Contents/Resources:
+DWARF
+
+./ft_ls.dSYM/Contents/Resources/DWARF:
+ft_ls
+
+./includes:
+ft_ls.h
+
+./libft:
+Makefile
+includes
+libft.a
+main.c
+src
+
+./libft/includes:
+libft.h
+
+./libft/src:
+ft_arrstr.c
+ft_arrstr.o
+ft_atoi.c
+ft_atoi.o
+ft_bzero.c
+ft_bzero.o
+ft_fatoi.c
+ft_fatoi.o
+ft_fstrchr.c
+ft_fstrchr.o
+ft_fstrlen.c
+ft_fstrlen.o
+ft_intlen.c
+ft_intlen.o
+ft_isalnum.c
+ft_isalnum.o
+ft_isalpha.c
+ft_isalpha.o
+ft_isascii.c
+ft_isascii.o
+ft_isdigit.c
+ft_isdigit.o
+ft_isprint.c
+ft_isprint.o
+ft_isspace.c
+ft_isspace.o
+ft_itoa.c
+ft_itoa.o
+ft_memalloc.c
+ft_memalloc.o
+ft_memccpy.c
+ft_memccpy.o
+ft_memchr.c
+ft_memchr.o
+ft_memcmp.c
+ft_memcmp.o
+ft_memcpy.c
+ft_memcpy.o
+ft_memdel.c
+ft_memdel.o
+ft_memmove.c
+ft_memmove.o
+ft_memset.c
+ft_memset.o
+ft_print_char.c
+ft_print_char.o
+ft_print_str.c
+ft_print_str.o
+ft_printf.c
+ft_printf.o
+ft_put_percent.c
+ft_put_percent.o
+ft_put_wchar.c
+ft_put_wchar.o
+ft_put_wstr.c
+ft_put_wstr.o
+ft_putchar.c
+ft_putchar.o
+ft_putchar_fd.c
+ft_putchar_fd.o
+ft_putendl.c
+ft_putendl.o
+ft_putendl_fd.c
+ft_putendl_fd.o
+ft_putnbr.c
+ft_putnbr.o
+ft_putnbr_fd.c
+ft_putnbr_fd.o
+ft_putstr.c
+ft_putstr.o
+ft_putstr_fd.c
+ft_putstr_fd.o
+ft_strcat.c
+ft_strcat.o
+ft_strchr.c
+ft_strchr.o
+ft_strclr.c
+ft_strclr.o
+ft_strcmp.c
+ft_strcmp.o
+ft_strcpy.c
+ft_strcpy.o
+ft_strdel.c
+ft_strdel.o
+ft_strdup.c
+ft_strdup.o
+ft_strequ.c
+ft_strequ.o
+ft_striter.c
+ft_striter.o
+ft_striteri.c
+ft_striteri.o
+ft_strjoin.c
+ft_strjoin.o
+ft_strlcat.c
+ft_strlcat.o
+ft_strlen.c
+ft_strlen.o
+ft_strmap.c
+ft_strmap.o
+ft_strmapi.c
+ft_strmapi.o
+ft_strncat.c
+ft_strncat.o
+ft_strncmp.c
+ft_strncmp.o
+ft_strncpy.c
+ft_strncpy.o
+ft_strnequ.c
+ft_strnequ.o
+ft_strnew.c
+ft_strnew.o
+ft_strnstr.c
+ft_strnstr.o
+ft_strrchr.c
+ft_strrchr.o
+ft_strrev.c
+ft_strrev.o
+ft_strsplit.c
+ft_strsplit.o
+ft_strstr.c
+ft_strstr.o
+ft_strsub.c
+ft_strsub.o
+ft_strtrim.c
+ft_strtrim.o
+ft_tolower.c
+ft_tolower.o
+ft_toupper.c
+ft_toupper.o
+ft_wdcount.c
+ft_wdcount.o
+handle_c.c
+handle_c.o
+handle_d.c
+handle_d.o
+handle_o.c
+handle_o.o
+handle_p.c
+handle_p.o
+handle_s.c
+handle_s.o
+handle_u.c
+handle_u.o
+handle_x.c
+handle_x.o
+parse_switchboard.c
+parse_switchboard.o
+ptr_len.c
+ptr_len.o
+signed_len.c
+signed_len.o
+specifier_switchboard.c
+specifier_switchboard.o
+unsigned_len.c
+unsigned_len.o
+wchar_len.c
+wchar_len.o
+zero_check.c
+zero_check.o
+
+./obj:
+args.o
+error_output.o
+ft_initialize_ls.o
+main.o
+print.o
+print_long.o
+read_ls.o
+recursion.o
+sorting.o
+
+./src:
+args.c
+error_output.c
+ft_initialize_ls.c
+main.c
+print.c
+print_long.c
+read_ls.c
+recursion.c
+sorting.c
+
+./test:
+file1
+layer1A
+layer1B
+
+./test/layer1A:
+file2
+layer2A
+
+./test/layer1A/layer2A:
+file3
+layer3A
+
+./test/layer1A/layer2A/layer3A:
+file4
+
+./test/layer1B:
+file2B
+
+[================================]
+
+
+   {LS} -R 
+
+[================================]
+Makefile
+Output-test-Recursion.txt
+Output-test.txt
+README.md
+author
+ft_ls
+ft_ls.dSYM
+ft_ls.en.pdf
+includes
+libft
+obj
+run-tests.sh
+src
+test
+valgrind-test.sh
+
+./ft_ls.dSYM:
+Contents
+
+./ft_ls.dSYM/Contents:
+Info.plist
+Resources
+
+./ft_ls.dSYM/Contents/Resources:
+DWARF
+
+./ft_ls.dSYM/Contents/Resources/DWARF:
+ft_ls
+
+./includes:
+ft_ls.h
+
+./libft:
+Makefile
+includes
+libft.a
+main.c
+src
+
+./libft/includes:
+libft.h
+
+./libft/src:
+ft_arrstr.c
+ft_arrstr.o
+ft_atoi.c
+ft_atoi.o
+ft_bzero.c
+ft_bzero.o
+ft_fatoi.c
+ft_fatoi.o
+ft_fstrchr.c
+ft_fstrchr.o
+ft_fstrlen.c
+ft_fstrlen.o
+ft_intlen.c
+ft_intlen.o
+ft_isalnum.c
+ft_isalnum.o
+ft_isalpha.c
+ft_isalpha.o
+ft_isascii.c
+ft_isascii.o
+ft_isdigit.c
+ft_isdigit.o
+ft_isprint.c
+ft_isprint.o
+ft_isspace.c
+ft_isspace.o
+ft_itoa.c
+ft_itoa.o
+ft_memalloc.c
+ft_memalloc.o
+ft_memccpy.c
+ft_memccpy.o
+ft_memchr.c
+ft_memchr.o
+ft_memcmp.c
+ft_memcmp.o
+ft_memcpy.c
+ft_memcpy.o
+ft_memdel.c
+ft_memdel.o
+ft_memmove.c
+ft_memmove.o
+ft_memset.c
+ft_memset.o
+ft_print_char.c
+ft_print_char.o
+ft_print_str.c
+ft_print_str.o
+ft_printf.c
+ft_printf.o
+ft_put_percent.c
+ft_put_percent.o
+ft_put_wchar.c
+ft_put_wchar.o
+ft_put_wstr.c
+ft_put_wstr.o
+ft_putchar.c
+ft_putchar.o
+ft_putchar_fd.c
+ft_putchar_fd.o
+ft_putendl.c
+ft_putendl.o
+ft_putendl_fd.c
+ft_putendl_fd.o
+ft_putnbr.c
+ft_putnbr.o
+ft_putnbr_fd.c
+ft_putnbr_fd.o
+ft_putstr.c
+ft_putstr.o
+ft_putstr_fd.c
+ft_putstr_fd.o
+ft_strcat.c
+ft_strcat.o
+ft_strchr.c
+ft_strchr.o
+ft_strclr.c
+ft_strclr.o
+ft_strcmp.c
+ft_strcmp.o
+ft_strcpy.c
+ft_strcpy.o
+ft_strdel.c
+ft_strdel.o
+ft_strdup.c
+ft_strdup.o
+ft_strequ.c
+ft_strequ.o
+ft_striter.c
+ft_striter.o
+ft_striteri.c
+ft_striteri.o
+ft_strjoin.c
+ft_strjoin.o
+ft_strlcat.c
+ft_strlcat.o
+ft_strlen.c
+ft_strlen.o
+ft_strmap.c
+ft_strmap.o
+ft_strmapi.c
+ft_strmapi.o
+ft_strncat.c
+ft_strncat.o
+ft_strncmp.c
+ft_strncmp.o
+ft_strncpy.c
+ft_strncpy.o
+ft_strnequ.c
+ft_strnequ.o
+ft_strnew.c
+ft_strnew.o
+ft_strnstr.c
+ft_strnstr.o
+ft_strrchr.c
+ft_strrchr.o
+ft_strrev.c
+ft_strrev.o
+ft_strsplit.c
+ft_strsplit.o
+ft_strstr.c
+ft_strstr.o
+ft_strsub.c
+ft_strsub.o
+ft_strtrim.c
+ft_strtrim.o
+ft_tolower.c
+ft_tolower.o
+ft_toupper.c
+ft_toupper.o
+ft_wdcount.c
+ft_wdcount.o
+handle_c.c
+handle_c.o
+handle_d.c
+handle_d.o
+handle_o.c
+handle_o.o
+handle_p.c
+handle_p.o
+handle_s.c
+handle_s.o
+handle_u.c
+handle_u.o
+handle_x.c
+handle_x.o
+parse_switchboard.c
+parse_switchboard.o
+ptr_len.c
+ptr_len.o
+signed_len.c
+signed_len.o
+specifier_switchboard.c
+specifier_switchboard.o
+unsigned_len.c
+unsigned_len.o
+wchar_len.c
+wchar_len.o
+zero_check.c
+zero_check.o
+
+./obj:
+args.o
+error_output.o
+ft_initialize_ls.o
+main.o
+print.o
+print_long.o
+read_ls.o
+recursion.o
+sorting.o
+
+./src:
+args.c
+error_output.c
+ft_initialize_ls.c
+main.c
+print.c
+print_long.c
+read_ls.c
+recursion.c
+sorting.c
+
+./test:
+file1
+layer1A
+layer1B
+
+./test/layer1A:
+file2
+layer2A
+
+./test/layer1A/layer2A:
+file3
+layer3A
+
+./test/layer1A/layer2A/layer3A:
+file4
+
+./test/layer1B:
+file2B
+[================================]
+
+
+   {FT_LS} -lartR test src
+
+[================================]
+test:
+total 0
+-rw-r--r--   1 tristyn  staff    0 Jan 24 21:35 file1
+drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 layer1A
+drwxr-xr-x   5 tristyn  staff  160 Jan 24 21:35 .
+drwxr-xr-x   3 tristyn  staff   96 Jan 24 21:35 layer1B
+drwxr-xr-x  18 tristyn  staff  576 Jun 16 22:01 ..
+
+test/layer1A:
+total 0
+-rw-r--r--   1 tristyn  staff    0 Jan 24 21:35 file2
+drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 .
+drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 layer2A
+drwxr-xr-x   5 tristyn  staff  160 Jan 24 21:35 ..
+
+test/layer1A/layer2A:
+total 0
+drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 ..
+-rw-r--r--   1 tristyn  staff    0 Jan 24 21:35 file3
+drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 .
+drwxr-xr-x   3 tristyn  staff   96 Jan 24 21:35 layer3A
+
+test/layer1A/layer2A/layer3A:
+total 0
+drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 ..
+-rw-r--r--   1 tristyn  staff    0 Jan 24 21:35 file4
+drwxr-xr-x   3 tristyn  staff   96 Jan 24 21:35 .
+
+test/layer1B:
+total 0
+drwxr-xr-x   5 tristyn  staff  160 Jan 24 21:35 ..
+-rw-r--r--   1 tristyn  staff    0 Jan 24 21:35 file2B
+drwxr-xr-x   3 tristyn  staff   96 Jan 24 21:35 .
+
+src:
+total 104
+drwxr-xr-x  11 tristyn  staff   352 Jun 11 22:15 .
+-rw-r--r--   1 tristyn  staff  1338 Jun 14 16:55 error_output.c
+-rw-r--r--   1 tristyn  staff  2392 Jun 16 01:19 ft_initialize_ls.c
+-rw-r--r--   1 tristyn  staff  3927 Jun 16 02:13 sorting.c
+-rw-r--r--   1 tristyn  staff  4469 Jun 16 19:01 recursion.c
+-rw-r--r--   1 tristyn  staff  4207 Jun 16 19:03 read_ls.c
+-rw-r--r--   1 tristyn  staff  4276 Jun 16 20:26 print_long.c
+-rw-r--r--   1 tristyn  staff  2443 Jun 16 21:32 args.c
+-rw-r--r--   1 tristyn  staff  7383 Jun 16 21:44 print.c
+-rw-r--r--   1 tristyn  staff  2793 Jun 16 22:01 main.c
+drwxr-xr-x  18 tristyn  staff   576 Jun 16 22:01 ..
+
+[================================]
+
+
+   {LS} -lartR  on test src
+
+[================================]
+test:
+total 0
+-rw-r--r--   1 tristyn  staff    0 24 Jan 21:35 file1
+drwxr-xr-x   4 tristyn  staff  128 24 Jan 21:35 layer1A
+drwxr-xr-x   5 tristyn  staff  160 24 Jan 21:35 .
+drwxr-xr-x   3 tristyn  staff   96 24 Jan 21:35 layer1B
+drwxr-xr-x  18 tristyn  staff  576 16 Jun 22:01 ..
+
+test/layer1A:
+total 0
+-rw-r--r--  1 tristyn  staff    0 24 Jan 21:35 file2
+drwxr-xr-x  4 tristyn  staff  128 24 Jan 21:35 .
+drwxr-xr-x  4 tristyn  staff  128 24 Jan 21:35 layer2A
+drwxr-xr-x  5 tristyn  staff  160 24 Jan 21:35 ..
+
+test/layer1A/layer2A:
+total 0
+drwxr-xr-x  4 tristyn  staff  128 24 Jan 21:35 ..
+-rw-r--r--  1 tristyn  staff    0 24 Jan 21:35 file3
+drwxr-xr-x  4 tristyn  staff  128 24 Jan 21:35 .
+drwxr-xr-x  3 tristyn  staff   96 24 Jan 21:35 layer3A
+
+test/layer1A/layer2A/layer3A:
+total 0
+drwxr-xr-x  4 tristyn  staff  128 24 Jan 21:35 ..
+-rw-r--r--  1 tristyn  staff    0 24 Jan 21:35 file4
+drwxr-xr-x  3 tristyn  staff   96 24 Jan 21:35 .
+
+test/layer1B:
+total 0
+drwxr-xr-x  5 tristyn  staff  160 24 Jan 21:35 ..
+-rw-r--r--  1 tristyn  staff    0 24 Jan 21:35 file2B
+drwxr-xr-x  3 tristyn  staff   96 24 Jan 21:35 .
+
+src:
+total 104
+drwxr-xr-x  11 tristyn  staff   352 11 Jun 22:15 .
+-rw-r--r--   1 tristyn  staff  1338 14 Jun 16:55 error_output.c
+-rw-r--r--   1 tristyn  staff  2392 16 Jun 01:19 ft_initialize_ls.c
+-rw-r--r--   1 tristyn  staff  3927 16 Jun 02:13 sorting.c
+-rw-r--r--   1 tristyn  staff  4469 16 Jun 19:01 recursion.c
+-rw-r--r--   1 tristyn  staff  4207 16 Jun 19:03 read_ls.c
+-rw-r--r--   1 tristyn  staff  4276 16 Jun 20:26 print_long.c
+-rw-r--r--   1 tristyn  staff  2443 16 Jun 21:32 args.c
+-rw-r--r--   1 tristyn  staff  7383 16 Jun 21:44 print.c
+-rw-r--r--   1 tristyn  staff  2793 16 Jun 22:01 main.c
+drwxr-xr-x  18 tristyn  staff   576 16 Jun 22:01 ..
+
+
+[================================]
+
+

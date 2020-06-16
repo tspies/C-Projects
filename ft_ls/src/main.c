@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 02:41:49 by tristyn           #+#    #+#             */
-/*   Updated: 2020/06/16 19:15:39 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 22:01:15 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,41 @@ int		main(int ac, char **av)
 	parse_args(nbr_arg, flags, av, arg_list);
 	// ft_printf("Arg NUMBER: %d\n", nbr_arg);
 	// if (arg_list)
-	// 	print_args(arg_list);
-	while(arg_list[i]){
-		read_dir_stream(arg_list[i], flags);
-		if (flags->flag_multi == 1 && nbr_arg == 3 && i == 0 && flags->flag_R == 0)
-			ft_putchar('\n');
-		else if (flags->flag_multi == 1 && nbr_arg == 2 && i == 0 && flags->flag_R == 0)
-			ft_putchar('\n');
-		else if (flags->flag_multi == 1 && nbr_arg > 3 && (i < nbr_arg - 2) && flags->flag_R == 0)
-			ft_putchar('\n');
-		i += 1;
+		// print_args(arg_list);
+	if (flags->flag_r == 1){
+		while(arg_list[i]){
+			read_dir_stream(arg_list[i], flags);
+			// if (flags->flag_multi == 1 && nbr_arg == 3 && i == 0 && flags->flag_R == 0)
+			// 	ft_putchar('\n');
+			// else if (flags->flag_multi == 1 && nbr_arg == 2 && i == 0 && flags->flag_R == 0)
+			// 	ft_putchar('\n');
+			// else if (flags->flag_multi == 1 && nbr_arg > 3 && (i < nbr_arg - 2) && flags->flag_R == 0)
+			// 	ft_putchar('\n');
+			i++;
+		}
 	}
+	else{
+		if (flags->flag_err == 0 && nbr_arg > 2)
+			i = nbr_arg - 2;
+		else if (flags->flag_err == 0 && nbr_arg == 1)
+			i = 0;
+		else if (flags->flag_err == 1 && nbr_arg > 1)
+			i = nbr_arg - 1;
+		else
+			i = 0;	
+		while(i > -1){
+			read_dir_stream(arg_list[i], flags);
+			// if (flags->flag_multi == 1 && nbr_arg == 3 && i == 0 && flags->flag_R == 0)
+			// 	ft_putchar('\n');
+			// else if (flags->flag_multi == 1 && nbr_arg == 2 && i == 0 && flags->flag_R == 0)
+			// 	ft_putchar('\n');
+			// else if (flags->flag_multi == 1 && nbr_arg > 3 && (i < nbr_arg - 2) && flags->flag_R == 0)
+			// 	ft_putchar('\n');
+			i--;
+		}
+	}
+	// ft_printf("%d\n", i);
+	// ft_printf("%s \n\n", arg_list[i])
 	
 	free(arg_list);
 	free(flags);
