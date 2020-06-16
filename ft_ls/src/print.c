@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/27 09:59:07 by tspies            #+#    #+#             */
-/*   Updated: 2020/06/16 01:50:11 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 04:04:51 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,11 +128,11 @@ void		print_handler(t_list *list, t_flag *flags, char *dir_name){
 		if (ft_strcmp(dir_name, ".") != 0)
 			ft_printf("\n%s:\n", dir_name);
 		
-		lstat(list->file->path, &file_stat);
+		lstat(list->path, &file_stat);
 		block_init = build_block_width_array(list, file_stat, block_width_array, block_init);
 		ft_printf("total %d\n", block_init);
 		while (list){
-			print_long_format(list->file->path, list->file->name, block_width_array);
+			print_long_format(list->path, list->name, block_width_array);
 			list = list->next;	
 		}
 		list = head;
@@ -166,7 +166,7 @@ int		build_block_width_array(t_list *list, struct stat file_stat, int *block_wid
 		block_init = 0;
 		while(list){
 			
-			lstat(list->file->path, &file_stat);
+			lstat(listgit->path, &file_stat);
 			usr = getpwuid(file_stat.st_uid);
 			grp = getgrgid(file_stat.st_gid);
 			// ft_printf("MARK\n");

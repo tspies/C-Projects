@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 22:01:39 by tristyn           #+#    #+#             */
-/*   Updated: 2020/06/16 01:38:04 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 03:47:26 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,20 @@ void	parse_args(int nbr, t_flag *flags, char **av, char **arg_list){
 	}
 	if ((flags->flag_err == 1 && nbr == 0) || (flags->flag_err == 0 && nbr == 1)){
 		// ft_printf("1st Case\n");
-		if (arg_list[i] != NULL)
+		if (arg_list[i] != NULL){
 			free(arg_list[i]);
+			arg_list[i] = NULL;	
+		}
 		arg_list[i] = ft_strdup(".");
 		// ft_printf("ARGLIST: %s\n", arg_list[i]);
 	}
 	else if (flags->flag_err == 0 && nbr > 1){
 		// ft_printf("2nd Case\n");
 		while(nbr > 1){
-			if(arg_list[i] != NULL)
+			if (arg_list[i] != NULL){
 				free(arg_list[i]);
+				arg_list[i] = NULL;
+			}
 			arg_list[i] = ft_strdup(av[i + 2]);
 			i++;
 			nbr -= 1;
@@ -60,8 +64,10 @@ void	parse_args(int nbr, t_flag *flags, char **av, char **arg_list){
 	else if (flags->flag_err == 1 && nbr > 0){
 		// ft_printf("3rd case\n");
 		while (nbr > 0){
-			if (arg_list[i] != NULL)
+			if (arg_list[i] != NULL){
 				free(arg_list[i]);
+				arg_list[i] = NULL;
+			}
 			arg_list[i] = ft_strdup(av[i + 1]);
 			i++;
 			nbr -= 1;

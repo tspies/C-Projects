@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 02:41:49 by tristyn           #+#    #+#             */
-/*   Updated: 2020/06/16 01:37:44 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 03:48:16 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ int		main(int ac, char **av)
 	t_flag	*flags = NULL;
 	int		nbr_arg = 0;
 	int		i = 0;
-	char	**arg_list = (char **)malloc(sizeof(char) * (999 + 1));
-
+	char	**arg_list = (char **)malloc(sizeof(char *) * (999 + 1));
 	// arg_list = (char **)malloc(sizeof(char ) * (999 + 1));
 	flags = (t_flag *)malloc(sizeof(t_flag) * 1);
 	// set_all_to_null(arg_list);

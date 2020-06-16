@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 10:12:02 by tspies            #+#    #+#             */
-/*   Updated: 2020/06/16 02:14:19 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 03:02:58 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ t_list       *get_path(t_list *list, char *dir)
         half_name = ft_strjoin("/", list->name);
         full_name = ft_strjoin(dir, half_name);
 		// ft_printf("Full Name: %s\n", full_name);
+		if(list->path != NULL){
+			free(list->path);
+			list->path = NULL;
+		}
         list->path = ft_strdup(full_name);
         list = list->next;
 		if (half_name != NULL)
@@ -147,8 +151,8 @@ void	free_list(t_list *list, t_list *list_head){
 		free(list->path);
 		list->path = NULL;
 		tmp = list->next;
-		// free(list);
-		// list = NULL;
+		free(list);
+		list = NULL;
 		list = tmp;
 	}
 	list_head = NULL;

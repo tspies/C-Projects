@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 22:42:02 by tristyn           #+#    #+#             */
-/*   Updated: 2020/06/16 02:14:50 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 03:59:21 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	recursion_start(char *arg_list, t_flag *flags){
 	char			*tmp_path = NULL;
 	struct dirent 	*rent = NULL;
 
-	
 	if ((dir = opendir(arg_list))){
 		while ((rent = readdir(dir))){
 			// ft_printf("RENT DNAME: %s\n\n", rent->d_name);
@@ -84,14 +83,17 @@ void	recursion_start(char *arg_list, t_flag *flags){
 					// ft_printf("Dir Found: [%s] with path --> %s\n", list->file->name, list->file->path);
 					// ft_printf("FREE IN DIR\n");
 					tmp_list = list->next;
-					if(tmp_path != NULL)
+					if(tmp_path != NULL){
 						free(tmp_path);
-					tmp_path = NULL;
+						tmp_path = NULL;
+					}
 					tmp_path = ft_strdup(list->path);
 					free(list->name);
 					list->name = NULL;
 					free(list->path);
 					list->path = NULL;
+					free(list);
+					list = NULL;
 					recursion_start(tmp_path, flags);
 				}
 				else{
@@ -106,9 +108,14 @@ void	recursion_start(char *arg_list, t_flag *flags){
 						free(list->path);
 						list->path = NULL;	
 					}
-					// if (list)
-					// free(list);
-					
+					if (list){
+						free(list);
+						list = NULL;
+					}
+				}
+				if (tmp_path != NULL){
+					free(tmp_path);
+					tmp_path = NULL;
 				}
 				list = tmp_list;
 					// if (tmp_path != NULL)
