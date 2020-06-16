@@ -504,51 +504,51 @@ file2B
 [================================]
 test:
 total 0
--rw-r--r--   1 tristyn  staff    0 Jan 24 21:35 file1
-drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 layer1A
-drwxr-xr-x   5 tristyn  staff  160 Jan 24 21:35 .
-drwxr-xr-x   3 tristyn  staff   96 Jan 24 21:35 layer1B
-drwxr-xr-x  18 tristyn  staff  576 Jun 16 22:01 ..
+-rw-r--r--   1 tristyn  staff    0 Jun 16 22:06 file1
+drwxr-xr-x   4 tristyn  staff  128 Jun 16 22:06 layer1A
+drwxr-xr-x   5 tristyn  staff  160 Jun 16 22:06 .
+drwxr-xr-x   3 tristyn  staff   96 Jun 16 22:06 layer1B
+drwxr-xr-x  18 tristyn  staff  576 Jun 16 22:18 ..
 
 test/layer1A:
 total 0
--rw-r--r--   1 tristyn  staff    0 Jan 24 21:35 file2
-drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 .
-drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 layer2A
-drwxr-xr-x   5 tristyn  staff  160 Jan 24 21:35 ..
+-rw-r--r--   1 tristyn  staff    0 Jun 16 22:06 file2
+drwxr-xr-x   4 tristyn  staff  128 Jun 16 22:06 .
+drwxr-xr-x   4 tristyn  staff  128 Jun 16 22:06 layer2A
+drwxr-xr-x   5 tristyn  staff  160 Jun 16 22:06 ..
 
 test/layer1A/layer2A:
 total 0
-drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 ..
--rw-r--r--   1 tristyn  staff    0 Jan 24 21:35 file3
-drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 .
-drwxr-xr-x   3 tristyn  staff   96 Jan 24 21:35 layer3A
+drwxr-xr-x   4 tristyn  staff  128 Jun 16 22:06 ..
+-rw-r--r--   1 tristyn  staff    0 Jun 16 22:06 file3
+drwxr-xr-x   4 tristyn  staff  128 Jun 16 22:06 .
+drwxr-xr-x   3 tristyn  staff   96 Jun 16 22:06 layer3A
 
 test/layer1A/layer2A/layer3A:
 total 0
-drwxr-xr-x   4 tristyn  staff  128 Jan 24 21:35 ..
--rw-r--r--   1 tristyn  staff    0 Jan 24 21:35 file4
-drwxr-xr-x   3 tristyn  staff   96 Jan 24 21:35 .
+drwxr-xr-x   4 tristyn  staff  128 Jun 16 22:06 ..
+-rw-r--r--   1 tristyn  staff    0 Jun 16 22:06 file4
+drwxr-xr-x   3 tristyn  staff   96 Jun 16 22:06 .
 
 test/layer1B:
 total 0
-drwxr-xr-x   5 tristyn  staff  160 Jan 24 21:35 ..
--rw-r--r--   1 tristyn  staff    0 Jan 24 21:35 file2B
-drwxr-xr-x   3 tristyn  staff   96 Jan 24 21:35 .
+drwxr-xr-x   5 tristyn  staff  160 Jun 16 22:06 ..
+-rw-r--r--   1 tristyn  staff    0 Jun 16 22:06 file2B
+drwxr-xr-x   3 tristyn  staff   96 Jun 16 22:06 .
 
 src:
 total 104
-drwxr-xr-x  11 tristyn  staff   352 Jun 11 22:15 .
--rw-r--r--   1 tristyn  staff  1338 Jun 14 16:55 error_output.c
--rw-r--r--   1 tristyn  staff  2392 Jun 16 01:19 ft_initialize_ls.c
--rw-r--r--   1 tristyn  staff  3927 Jun 16 02:13 sorting.c
--rw-r--r--   1 tristyn  staff  4469 Jun 16 19:01 recursion.c
--rw-r--r--   1 tristyn  staff  4207 Jun 16 19:03 read_ls.c
--rw-r--r--   1 tristyn  staff  4276 Jun 16 20:26 print_long.c
--rw-r--r--   1 tristyn  staff  2443 Jun 16 21:32 args.c
--rw-r--r--   1 tristyn  staff  7383 Jun 16 21:44 print.c
--rw-r--r--   1 tristyn  staff  2793 Jun 16 22:01 main.c
-drwxr-xr-x  18 tristyn  staff   576 Jun 16 22:01 ..
+-rw-r--r--   1 tristyn  staff  2443 Jun 16 22:06 args.c
+-rw-r--r--   1 tristyn  staff  1338 Jun 16 22:06 error_output.c
+-rw-r--r--   1 tristyn  staff  2392 Jun 16 22:06 ft_initialize_ls.c
+-rw-r--r--   1 tristyn  staff  2793 Jun 16 22:06 main.c
+-rw-r--r--   1 tristyn  staff  7383 Jun 16 22:06 print.c
+-rw-r--r--   1 tristyn  staff  4276 Jun 16 22:06 print_long.c
+-rw-r--r--   1 tristyn  staff  4207 Jun 16 22:06 read_ls.c
+-rw-r--r--   1 tristyn  staff  4469 Jun 16 22:06 recursion.c
+drwxr-xr-x  11 tristyn  staff   352 Jun 16 22:06 .
+-rw-r--r--   1 tristyn  staff  3927 Jun 16 22:06 sorting.c
+drwxr-xr-x  18 tristyn  staff   576 Jun 16 22:18 ..
 
 [================================]
 
@@ -556,53 +556,53 @@ drwxr-xr-x  18 tristyn  staff   576 Jun 16 22:01 ..
    {LS} -lartR  on test src
 
 [================================]
+src:
+total 104
+-rw-r--r--   1 tristyn  staff  2443 16 Jun 22:06 args.c
+-rw-r--r--   1 tristyn  staff  1338 16 Jun 22:06 error_output.c
+-rw-r--r--   1 tristyn  staff  2392 16 Jun 22:06 ft_initialize_ls.c
+-rw-r--r--   1 tristyn  staff  2793 16 Jun 22:06 main.c
+-rw-r--r--   1 tristyn  staff  7383 16 Jun 22:06 print.c
+-rw-r--r--   1 tristyn  staff  4276 16 Jun 22:06 print_long.c
+-rw-r--r--   1 tristyn  staff  4207 16 Jun 22:06 read_ls.c
+-rw-r--r--   1 tristyn  staff  4469 16 Jun 22:06 recursion.c
+drwxr-xr-x  11 tristyn  staff   352 16 Jun 22:06 .
+-rw-r--r--   1 tristyn  staff  3927 16 Jun 22:06 sorting.c
+drwxr-xr-x  18 tristyn  staff   576 16 Jun 22:18 ..
+
 test:
 total 0
--rw-r--r--   1 tristyn  staff    0 24 Jan 21:35 file1
-drwxr-xr-x   4 tristyn  staff  128 24 Jan 21:35 layer1A
-drwxr-xr-x   5 tristyn  staff  160 24 Jan 21:35 .
-drwxr-xr-x   3 tristyn  staff   96 24 Jan 21:35 layer1B
-drwxr-xr-x  18 tristyn  staff  576 16 Jun 22:01 ..
+-rw-r--r--   1 tristyn  staff    0 16 Jun 22:06 file1
+drwxr-xr-x   4 tristyn  staff  128 16 Jun 22:06 layer1A
+drwxr-xr-x   5 tristyn  staff  160 16 Jun 22:06 .
+drwxr-xr-x   3 tristyn  staff   96 16 Jun 22:06 layer1B
+drwxr-xr-x  18 tristyn  staff  576 16 Jun 22:18 ..
 
 test/layer1A:
 total 0
--rw-r--r--  1 tristyn  staff    0 24 Jan 21:35 file2
-drwxr-xr-x  4 tristyn  staff  128 24 Jan 21:35 .
-drwxr-xr-x  4 tristyn  staff  128 24 Jan 21:35 layer2A
-drwxr-xr-x  5 tristyn  staff  160 24 Jan 21:35 ..
+-rw-r--r--  1 tristyn  staff    0 16 Jun 22:06 file2
+drwxr-xr-x  4 tristyn  staff  128 16 Jun 22:06 .
+drwxr-xr-x  4 tristyn  staff  128 16 Jun 22:06 layer2A
+drwxr-xr-x  5 tristyn  staff  160 16 Jun 22:06 ..
 
 test/layer1A/layer2A:
 total 0
-drwxr-xr-x  4 tristyn  staff  128 24 Jan 21:35 ..
--rw-r--r--  1 tristyn  staff    0 24 Jan 21:35 file3
-drwxr-xr-x  4 tristyn  staff  128 24 Jan 21:35 .
-drwxr-xr-x  3 tristyn  staff   96 24 Jan 21:35 layer3A
+drwxr-xr-x  4 tristyn  staff  128 16 Jun 22:06 ..
+-rw-r--r--  1 tristyn  staff    0 16 Jun 22:06 file3
+drwxr-xr-x  4 tristyn  staff  128 16 Jun 22:06 .
+drwxr-xr-x  3 tristyn  staff   96 16 Jun 22:06 layer3A
 
 test/layer1A/layer2A/layer3A:
 total 0
-drwxr-xr-x  4 tristyn  staff  128 24 Jan 21:35 ..
--rw-r--r--  1 tristyn  staff    0 24 Jan 21:35 file4
-drwxr-xr-x  3 tristyn  staff   96 24 Jan 21:35 .
+drwxr-xr-x  4 tristyn  staff  128 16 Jun 22:06 ..
+-rw-r--r--  1 tristyn  staff    0 16 Jun 22:06 file4
+drwxr-xr-x  3 tristyn  staff   96 16 Jun 22:06 .
 
 test/layer1B:
 total 0
-drwxr-xr-x  5 tristyn  staff  160 24 Jan 21:35 ..
--rw-r--r--  1 tristyn  staff    0 24 Jan 21:35 file2B
-drwxr-xr-x  3 tristyn  staff   96 24 Jan 21:35 .
-
-src:
-total 104
-drwxr-xr-x  11 tristyn  staff   352 11 Jun 22:15 .
--rw-r--r--   1 tristyn  staff  1338 14 Jun 16:55 error_output.c
--rw-r--r--   1 tristyn  staff  2392 16 Jun 01:19 ft_initialize_ls.c
--rw-r--r--   1 tristyn  staff  3927 16 Jun 02:13 sorting.c
--rw-r--r--   1 tristyn  staff  4469 16 Jun 19:01 recursion.c
--rw-r--r--   1 tristyn  staff  4207 16 Jun 19:03 read_ls.c
--rw-r--r--   1 tristyn  staff  4276 16 Jun 20:26 print_long.c
--rw-r--r--   1 tristyn  staff  2443 16 Jun 21:32 args.c
--rw-r--r--   1 tristyn  staff  7383 16 Jun 21:44 print.c
--rw-r--r--   1 tristyn  staff  2793 16 Jun 22:01 main.c
-drwxr-xr-x  18 tristyn  staff   576 16 Jun 22:01 ..
+drwxr-xr-x  5 tristyn  staff  160 16 Jun 22:06 ..
+-rw-r--r--  1 tristyn  staff    0 16 Jun 22:06 file2B
+drwxr-xr-x  3 tristyn  staff   96 16 Jun 22:06 .
 
 
 [================================]
