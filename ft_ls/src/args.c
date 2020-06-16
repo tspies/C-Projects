@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 22:01:39 by tristyn           #+#    #+#             */
-/*   Updated: 2020/06/16 03:47:26 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 20:14:36 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void	parse_args(int nbr, t_flag *flags, char **av, char **arg_list){
 			free(arg_list[i]);
 			arg_list[i] = NULL;	
 		}
-		arg_list[i] = ft_strdup(".");
+		// arg_list[i] = ft_strdup(".");
+		arg_list[i] = ".";
 		// ft_printf("ARGLIST: %s\n", arg_list[i]);
 	}
 	else if (flags->flag_err == 0 && nbr > 1){

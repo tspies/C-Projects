@@ -6,11 +6,13 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 02:41:49 by tristyn           #+#    #+#             */
-/*   Updated: 2020/06/16 14:29:56 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 19:15:39 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+int first = 0;
 
 int		main(int ac, char **av)
 {
@@ -30,11 +32,11 @@ int		main(int ac, char **av)
 	// 	print_args(arg_list);
 	while(arg_list[i]){
 		read_dir_stream(arg_list[i], flags);
-		if (flags->flag_multi == 1 && nbr_arg == 3 && i == 0)
+		if (flags->flag_multi == 1 && nbr_arg == 3 && i == 0 && flags->flag_R == 0)
 			ft_putchar('\n');
-		else if (flags->flag_multi == 1 && nbr_arg == 2 && i == 0)
+		else if (flags->flag_multi == 1 && nbr_arg == 2 && i == 0 && flags->flag_R == 0)
 			ft_putchar('\n');
-		else if (flags->flag_multi == 1 && nbr_arg > 3 && (i < nbr_arg - 2))
+		else if (flags->flag_multi == 1 && nbr_arg > 3 && (i < nbr_arg - 2) && flags->flag_R == 0)
 			ft_putchar('\n');
 		i += 1;
 	}

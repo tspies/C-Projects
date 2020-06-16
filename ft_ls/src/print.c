@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/27 09:59:07 by tspies            #+#    #+#             */
-/*   Updated: 2020/06/16 13:54:44 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 19:24:19 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,28 +121,49 @@ void		print_handler(t_list *list, t_flag *flags, char *dir_name){
 	}
 	else if (flags->flag_R == 1 && flags->flag_l == 0){
 		// ft_printf("Recursion Print!\n\n");
-		if (ft_strcmp(dir_name, ".") != 0)
-			ft_printf("\n%s:\n", dir_name);
-		if (flags->flag_multi == 1)
-			ft_printf("\n%s\n", dir_name);
+		// ft_printf("%d --\n", flags->flag_multi);
+		if (first == 0){
+			first = 1;
+		}
+		else if (first == 1){
+			// if (ft_strcmp(dir_name, ".") != 0)
+			// 	ft_printf("%s:\n", dir_name);
+			if ((flags->flag_multi == 1 && ft_strcmp(dir_name, ".") == 0) || (flags->flag_multi == 1 && first == 1))
+				ft_printf("%s:\n", dir_name);
+			if (flags->flag_multi == 0 && ft_strcmp(dir_name, ".") != 0)
+				ft_printf("%s:\n", dir_name);
+		}
 		print_list(list);
+		ft_putchar('\n');
 	}
 	else if (flags->flag_R == 1 && flags->flag_l== 1){
 		// ft_printf("Recursion and Long format Print!\n\n");
-		if (ft_strcmp(dir_name, ".") != 0)
-			ft_printf("\n%s:\n", dir_name);
-		
+		if (first == 0){
+			first = 1;	
+			if (flags->flag_multi ==1)
+				ft_printf("%s:\n", dir_name);
+		}
+		else if (first == 1){
+			// if (ft_strcmp(dir_name, ".") != 0)
+			// 	ft_printf("%s:\n", dir_name);
+			if ((flags->flag_multi == 1 && ft_strcmp(dir_name, ".") == 0) || (flags->flag_multi == 1 && first == 1))
+				ft_printf("%s:\n", dir_name);
+			if (flags->flag_multi == 0 && ft_strcmp(dir_name, ".") != 0)
+				ft_printf("%s:\n", dir_name);
+		}
+		// if (ft_strcmp(dir_name, ".") != 0 && flags->flag_multi == 0)
+		// 	ft_printf("%s:\n", dir_name);
+		// if (flags->flag_multi == 1)
+		// 		ft_printf("%s:\n", dir_name);
 		lstat(list->path, &file_stat);
 		block_init = build_block_width_array(list, file_stat, block_width_array, block_init);
 		ft_printf("total %d\n", block_init);
-		if (flags->flag_multi == 1)
-				ft_printf("%s:\n", dir_name);
 		while (list){
 			print_long_format(list->path, list->name, block_width_array);
 			list = list->next;	
 		}
-		list = head;
-			
+		ft_putchar('\n');
+		list = head;	
 	}
 	else{
 		if (flags->flag_multi == 1)
@@ -162,6 +183,8 @@ int		build_block_width_array(t_list *list, struct stat file_stat, int *block_wid
 		
 		struct 	passwd	*usr;
 		struct 	group	*grp;
+		char			*tmp1 = NULL;
+		char			*tmp2 = NULL;
 		t_list			*head = list;
 		
 		block_init = 0;
@@ -183,14 +206,52 @@ int		build_block_width_array(t_list *list, struct stat file_stat, int *block_wid
 				block_width_array[1] = (int)ft_strlen(grp->gr_name);
 			}
 			if ((S_ISCHR(file_stat.st_mode)) || (S_ISBLK(file_stat.st_mode))){
-				if (ft_strlen(ft_itoa(block_width_array[2])) < ft_strlen(ft_itoa(file_stat.st_rdev >> 24)))
-					block_width_array[2] = (int)ft_strlen(ft_itoa(file_stat.st_rdev >> 24));
-				if (ft_strlen(ft_itoa(block_width_array[3])) < ft_strlen(ft_itoa(file_stat.st_rdev & 0xFFFFFF)))
-					block_width_array[3] = (int)ft_strlen(ft_itoa(file_stat.st_rdev & 0xFFFFFF));
+				tmp1 = ft_itoa(block_width_array[2]);
+				tmp2 = ft_itoa(file_stat.st_rdev >> 24);
+				if (ft_strlen(tmp1) < ft_strlen(tmp2)){
+					block_width_array[2] = (int)ft_strlen(tmp1);
+					free(tmp1);
+					free(tmp2);
+					tmp1 = NULL;
+					tmp2 = NULL;	
+				}
+				if (tmp1 != NULL ){
+					free(tmp1);
+					tmp1 = NULL;
+				}
+				if (tmp2 != NULL){
+					free(tmp2);
+					tmp2 = NULL;
+				}
+				tmp1 = ft_itoa(block_width_array[3]);
+				tmp2 = ft_itoa(file_stat.st_rdev & 0xFFFFFF);
+				if (ft_strlen(tmp1) < ft_strlen(tmp2)){
+					block_width_array[3] = (int)ft_strlen(tmp2);
+					free(tmp1);
+					free(tmp2);
+					tmp1 = NULL;
+					tmp2 = NULL;	
+				}
+				if (tmp1 != NULL ){
+					free(tmp1);
+					tmp1 = NULL;
+				}
+				if (tmp2 != NULL){
+					free(tmp2);
+					tmp2 = NULL;
+				}
 			}
 			else{
-				if ((size_t)block_width_array[2] < ft_strlen(ft_itoa(file_stat.st_size)))
-					block_width_array[2] = (int)ft_strlen(ft_itoa(file_stat.st_size));
+				tmp1 = ft_itoa(file_stat.st_size);
+				if ((size_t)block_width_array[2] < ft_strlen(tmp1)){
+					block_width_array[2] = (int)ft_strlen(tmp1);
+					free(tmp1);
+					tmp1 = NULL;
+				}
+				if (tmp1 != NULL){
+					free(tmp1);
+					tmp1 = NULL;
+				}
 			}
 			block_init  += file_stat.st_blocks;
 			list = list->next;

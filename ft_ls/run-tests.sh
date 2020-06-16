@@ -113,6 +113,7 @@ echo  "[================================]\n\n" >> Output-test-Recursion.txt
 echo  "   {LS} -lartR  on test src\n" >> Output-test-Recursion.txt
 echo  "[================================]" >> Output-test-Recursion.txt
 ls  -lartR test src >> Output-test-Recursion.txt
+echo "\n" >> Output-test-Recursion.txt
 echo  "[================================]\n\n" >> Output-test-Recursion.txt
 
 

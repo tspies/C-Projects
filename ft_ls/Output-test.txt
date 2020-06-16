@@ -19,6 +19,7 @@ run-tests.sh
 src
 test
 valgrind-out.txt
+valgrind-test.sh
 [================================]
 
 
@@ -38,12 +39,14 @@ run-tests.sh
 src
 test
 valgrind-out.txt
+valgrind-test.sh
 [================================]
 
 
    {FT_LS} -r
 
 [================================]
+valgrind-test.sh
 valgrind-out.txt
 test
 src
@@ -63,6 +66,7 @@ Makefile
    {LS} -r 
 
 [================================]
+valgrind-test.sh
 valgrind-out.txt
 test
 src
@@ -97,6 +101,7 @@ run-tests.sh
 src
 test
 valgrind-out.txt
+valgrind-test.sh
 [================================]
 
 
@@ -118,46 +123,49 @@ run-tests.sh
 src
 test
 valgrind-out.txt
+valgrind-test.sh
 [================================]
 
 
    {FT_LS} -l
 
 [================================]
-total 1328
--rw-r--r--   1 tristyn  staff    2597 Jun 16 14:51 Makefile
--rw-r--r--   1 tristyn  staff    1429 Jun 16 14:53 Output-test.txt
+total 1336
+-rw-r--r--   1 tristyn  staff    2550 Jun 16 14:59 Makefile
+-rw-r--r--   1 tristyn  staff    1531 Jun 16 19:25 Output-test.txt
 -rw-r--r--   1 tristyn  staff     191 Jan  9 10:26 README.md
 -rw-r--r--   1 tristyn  staff       7 Jun 10 13:13 author
--rwxr-xr-x   1 tristyn  staff   56828 Jun 16 14:51 ft_ls
+-rwxr-xr-x   1 tristyn  staff   56884 Jun 16 19:24 ft_ls
 drwxr-xr-x   3 tristyn  staff      96 Jun 15 00:55 ft_ls.dSYM
 -rw-r--r--   1 tristyn  staff  395967 Jan  9 10:26 ft_ls.en.pdf
 drwxr-xr-x   3 tristyn  staff      96 Feb  7 22:13 includes
-drwxr-xr-x   7 tristyn  staff     224 Jun 16 14:51 libft
--rwxr-xr-x   1 tristyn  staff    5141 Jun 16 14:53 run-tests.sh
+drwxr-xr-x   7 tristyn  staff     224 Jun 16 19:24 libft
+-rwxr-xr-x   1 tristyn  staff    5180 Jun 16 17:48 run-tests.sh
 drwxr-xr-x  11 tristyn  staff     352 Jun 11 22:15 src
 drwxr-xr-x   5 tristyn  staff     160 Jan 24 21:35 test
--rw-r--r--   1 tristyn  staff  149638 Jun 16 02:54 valgrind-out.txt
+-rw-r--r--   1 tristyn  staff  148871 Jun 16 15:00 valgrind-out.txt
+-rw-r--r--   1 tristyn  staff     224 Jun 16 14:55 valgrind-test.sh
 [================================]
 
 
    {LS} -l 
 
 [================================]
-total 1328
--rw-r--r--   1 tristyn  staff    2597 16 Jun 14:51 Makefile
--rw-r--r--   1 tristyn  staff    2243 16 Jun 14:53 Output-test.txt
--rw-r--r--   1 tristyn  staff     191  9 Jan 10:26 README.md
--rw-r--r--   1 tristyn  staff       7 10 Jun 13:13 author
--rwxr-xr-x   1 tristyn  staff   56828 16 Jun 14:51 ft_ls
-drwxr-xr-x   3 tristyn  staff      96 15 Jun 00:55 ft_ls.dSYM
--rw-r--r--   1 tristyn  staff  395967  9 Jan 10:26 ft_ls.en.pdf
-drwxr-xr-x   3 tristyn  staff      96  7 Feb 22:13 includes
-drwxr-xr-x   7 tristyn  staff     224 16 Jun 14:51 libft
--rwxr-xr-x   1 tristyn  staff    5141 16 Jun 14:53 run-tests.sh
-drwxr-xr-x  11 tristyn  staff     352 11 Jun 22:15 src
-drwxr-xr-x   5 tristyn  staff     160 24 Jan 21:35 test
--rw-r--r--   1 tristyn  staff  149638 16 Jun 02:54 valgrind-out.txt
+total 1336
+-rw-r--r--   1 tristyn  staff    2550 Jun 16 14:59 Makefile
+-rw-r--r--   1 tristyn  staff    2413 Jun 16 19:25 Output-test.txt
+-rw-r--r--   1 tristyn  staff     191 Jan  9 10:26 README.md
+-rw-r--r--   1 tristyn  staff       7 Jun 10 13:13 author
+-rwxr-xr-x   1 tristyn  staff   56884 Jun 16 19:24 ft_ls
+drwxr-xr-x   3 tristyn  staff      96 Jun 15 00:55 ft_ls.dSYM
+-rw-r--r--   1 tristyn  staff  395967 Jan  9 10:26 ft_ls.en.pdf
+drwxr-xr-x   3 tristyn  staff      96 Feb  7 22:13 includes
+drwxr-xr-x   7 tristyn  staff     224 Jun 16 19:24 libft
+-rwxr-xr-x   1 tristyn  staff    5180 Jun 16 17:48 run-tests.sh
+drwxr-xr-x  11 tristyn  staff     352 Jun 11 22:15 src
+drwxr-xr-x   5 tristyn  staff     160 Jan 24 21:35 test
+-rw-r--r--   1 tristyn  staff  148871 Jun 16 15:00 valgrind-out.txt
+-rw-r--r--   1 tristyn  staff     224 Jun 16 14:55 valgrind-test.sh
 [================================]
 
 
@@ -165,11 +173,12 @@ drwxr-xr-x   5 tristyn  staff     160 24 Jan 21:35 test
 
 [================================]
 Output-test.txt
-run-tests.sh
 ft_ls
 libft
-Makefile
+run-tests.sh
 valgrind-out.txt
+Makefile
+valgrind-test.sh
 ft_ls.dSYM
 src
 author
@@ -184,11 +193,12 @@ README.md
 
 [================================]
 Output-test.txt
-run-tests.sh
 ft_ls
 libft
-Makefile
+run-tests.sh
 valgrind-out.txt
+Makefile
+valgrind-test.sh
 ft_ls.dSYM
 src
 author

@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/27 09:59:07 by tspies            #+#    #+#             */
-/*   Updated: 2020/06/15 00:12:49 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 17:03:28 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	print_long_format(char *file_path, char *file_name, int *block_width_array)
 	}
 	print_file_time(file_stat);
 	ft_printf("%s\n", file_name);
-
 }
 
 

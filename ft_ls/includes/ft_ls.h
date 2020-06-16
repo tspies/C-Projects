@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/31 12:59:21 by tspies            #+#    #+#             */
-/*   Updated: 2020/06/16 01:07:49 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 19:04:47 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 
 # define unsigned int u_int;
 # define NAME "ft_ls"
+
+extern int first;
 
 typedef struct	stat 	t_stat;
 typedef struct	s_flags
@@ -64,7 +66,7 @@ typedef struct	s_list
 */
 void			ft_initialize_ls(char **av, t_flag *flags);
 void        	read_dir_stream(char *arg_list, t_flag *flags);
-void			ft_ls(t_list* list, char *dir_name, t_flag *flags/*, int i*/);
+void			ft_ls(t_list* list, char *dir_name, t_flag *flags);
 void			recursion_start(char *arg_list, t_flag *flags);
 
 /*

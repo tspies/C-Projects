@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 22:42:02 by tristyn           #+#    #+#             */
-/*   Updated: 2020/06/16 03:59:21 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 19:01:57 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	recursion_start(char *arg_list, t_flag *flags){
 	t_list			*list_tmp = NULL;
 	t_stat			stat;
 	DIR            	*dir = NULL;
-	int				first = 0;
+	int				first_node = 0;
 	char			*tmp_path = NULL;
 	struct dirent 	*rent = NULL;
 
@@ -41,9 +41,9 @@ void	recursion_start(char *arg_list, t_flag *flags){
 					list_curr->name = ft_strdup(rent->d_name);
 					list_curr->path = NULL;
 					
-					if (first == 0){
+					if (first_node == 0){
 						list_head = list_tmp = list_curr;
-						first = 1;
+						first_node = 1;
 					}
 					else{
 						list_tmp->next = list_curr;

@@ -6,7 +6,7 @@
 #    By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/31 12:24:51 by tspies            #+#    #+#              #
-#    Updated: 2020/06/16 14:51:23 by tristyn          ###   ########.fr        #
+#    Updated: 2020/06/16 14:59:46 by tristyn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,8 +55,6 @@ $(NAME): $(OBJ)
 	@echo "$(G)Binary $(BR)Libft.a $(G)Created!$(SET)"
 	@$(CC) $(FLAGS) $(OBJ) -L $(LIB_PATH) -lft -o $(NAME)
 	@echo "\033[32mBinary \033[1;31m$(NAME)\033[0m\033[32m Fused With Libft.a\033[0m"
-	@make -C $(LIB_PATH)/ clean
-	@/bin/rm -rf obj
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p obj
