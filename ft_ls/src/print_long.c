@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/27 09:59:07 by tspies            #+#    #+#             */
-/*   Updated: 2020/06/16 17:03:28 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 20:26:11 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,10 +136,10 @@ void	print_file_minor(struct stat file_stat, int *block_width_array){
 
 void	print_file_time(struct stat file_stat){
 	
-	time_t 	now;
+	// time_t 	now;
 	char 	*seconds;
 
-	time(&now);
+	// time(&now);
 	seconds = ctime(&(file_stat.st_mtimespec.tv_sec)) + 4;
 	ft_printf(" %.12s ", seconds);
 }
