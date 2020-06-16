@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 02:41:49 by tristyn           #+#    #+#             */
-/*   Updated: 2020/06/16 22:35:48 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/16 22:42:21 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		main(int ac, char **av)
 	// ft_printf("Arg NUMBER: %d\n", nbr_arg);
 	// if (arg_list)
 		// print_args(arg_list);
-	if (flags->flag_r == 1){
+	if (flags->flag_r == 1 && flags->flag_t == 0){
 		while(arg_list[i]){
 			read_dir_stream(arg_list[i], flags);
 			// if (flags->flag_multi == 1 && nbr_arg == 3 && i == 0 && flags->flag_R == 0)
