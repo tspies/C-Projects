@@ -6,7 +6,7 @@
 /*   By: tristyn <tristyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 02:41:49 by tristyn           #+#    #+#             */
-/*   Updated: 2020/06/16 22:42:21 by tristyn          ###   ########.fr       */
+/*   Updated: 2020/06/18 12:42:28 by tristyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,11 @@ int		main(int ac, char **av)
 	// ft_printf("%d\n", i);
 	// ft_printf("%s \n\n", arg_list[i])
 	
+	i = 0;
+	while(arg_list[i]){
+		free(arg_list[i]);
+		i++;
+	}
 	free(arg_list);
 	free(flags);
 	return (0);
